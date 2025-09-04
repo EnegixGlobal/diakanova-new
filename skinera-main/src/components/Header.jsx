@@ -354,12 +354,12 @@ export default function Header({ onBookAppointment }) {
             </div>
 
             {/* Wellness, Gallery, Blogs */}
-            <a
-              href="#"
+            <Link
+              to="/wellness"
               className="text-gray-700 hover:text-[#c67c54] transition-colors"
             >
               Wellness
-            </a>
+            </Link>
             <Link
               to="/gallery"
               className="text-gray-700 hover:text-[#c67c54] transition-colors"
@@ -641,12 +641,13 @@ export default function Header({ onBookAppointment }) {
             </div>
 
             {/* Extra links */}
-            <a
-              href="#"
+            <Link
+              to="/wellness"
               className="block py-3 text-base text-gray-800 border-b border-black/10"
+              onClick={() => setOpen(false)}
             >
               Wellness
-            </a>
+            </Link>
             <Link
               to="/gallery"
               className="block py-3 text-base text-gray-800 border-b border-black/10"

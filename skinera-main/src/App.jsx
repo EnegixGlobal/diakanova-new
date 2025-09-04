@@ -9,6 +9,7 @@ import NewsArchive from "./components/NewsArchive.jsx";
 import { AdminLogin, Dashboard } from "./adminroutes/index.js";
 import GalleryPage from "./components/GalleryPage.jsx";
 import ReviewsDemo from "./components/ReviewsDemo.jsx";
+import Wellness from "./components/Wellness.jsx";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/admin-dashboard" element={<Dashboard />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/reviews-demo" element={<ReviewsDemo />} />
+        <Route path="/wellness" element={<Wellness />} />
       </Routes>
     </Router>
   );
