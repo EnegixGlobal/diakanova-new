@@ -38,11 +38,11 @@ export default function HomePage() {
       <FounderMessage />
       <WhyChooseUs />
       <StorySection />
-      <GoogleReviewsAutoSlider autoSlideInterval={4000} showControls={true} />
       <ExpertSkincare />
       <GalleryCollection />
       <ConsultationBanner onBookAppointment={openAppointment} />
       <InstaReels />
+      <GoogleReviewsAutoSlider autoSlideInterval={4000} showControls={true} />
       <LatestNews />
       <ExclusiveUpdate />
       <Footer />
