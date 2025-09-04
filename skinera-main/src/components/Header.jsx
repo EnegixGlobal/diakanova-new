@@ -146,6 +146,24 @@ export default function Header({ onBookAppointment }) {
                 <path d="M13.5 9.75V7.875A1.875 1.875 0 0 1 15.375 6h1.125V3.75h-1.5A4.125 4.125 0 0 0 9.75 7.875V9.75H7.5v2.25h2.25V20.25h2.25V12h2.25l.375-2.25h-2.625Z" />
               </svg>
             </a>
+            <a
+              href="https://in.linkedin.com/in/dr-kirti-kothari-12b282377"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-black/20 text-black flex items-center justify-center hover:bg-black/5"
+            >
+              {/* linkedin */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+                aria-hidden="true"
+              >
+                <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003zM7.088 20.452H3.996V9h3.092v11.452zM5.542 7.433a1.79 1.79 0 1 1 0-3.58 1.79 1.79 0 0 1 0 3.58zM20.452 20.452h-3.09v-5.89c0-1.405-.027-3.213-2.014-3.213-2.016 0-2.325 1.575-2.325 3.104v6h-3.09V9h2.966v1.566h.042c.413-.78 1.425-1.604 2.935-1.604 3.14 0 3.716 2.067 3.716 4.754v6.736z" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -157,7 +175,8 @@ export default function Header({ onBookAppointment }) {
               <img
                 src={logo}
                 alt="DSkinova — Professional Skincare & Cosmetology Clinic logo"
-                className="h-10 w-auto filter brightness-75"
+                // Removed darkness filter per request
+                className="h-10 w-auto"
               />
             </Link>
           </div>
