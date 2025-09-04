@@ -382,13 +382,14 @@ export default function Header({ onBookAppointment }) {
 
           {/* Right: Desktop CTA + Mobile Hamburger */}
           <div className="flex items-center justify-end gap-2">
-            <a
-              href="tel:+917878867379"
+            <button
+              type="button"
+              onClick={onBookAppointment}
               className="hidden md:inline-block bg-[#c67c54] text-white px-6 lg:px-8 py-2.5 lg:py-3 text-base border border-transparent hover:bg-[#b8734a] transition-colors"
-              aria-label="Call now"
+              aria-label="Book appointment now"
             >
-              Call Now
-            </a>
+              Book Appointment Now
+            </button>
             <button
               type="button"
               aria-label="Open menu"
@@ -670,14 +671,17 @@ export default function Header({ onBookAppointment }) {
               Contact Us
             </Link>
             <div className="pt-4">
-              <a
-                href="tel:+917878867379"
+              <button
+                type="button"
                 className="inline-flex items-center justify-center w-full bg-[#c67c54] text-white px-5 py-3 text-base border border-transparent shadow-sm hover:bg-[#b8734a]"
-                aria-label="Call now"
-                onClick={() => setOpen(false)}
+                aria-label="Book appointment now"
+                onClick={() => {
+                  onBookAppointment?.();
+                  setOpen(false);
+                }}
               >
-                Call Now
-              </a>
+                Book appointment now
+              </button>
             </div>
           </nav>
         </aside>
