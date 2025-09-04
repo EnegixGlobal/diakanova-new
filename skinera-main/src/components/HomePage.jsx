@@ -16,6 +16,7 @@ import LatestNews from "./LatestNews.jsx";
 import ExclusiveUpdate from "./ExclusiveUpdate.jsx";
 import Footer from "./Footer.jsx";
 import AppointmentModal from "./AppointmentModal.jsx";
+import InstaReels from "./InstaReels.jsx";
 
 export default function HomePage() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -41,6 +42,7 @@ export default function HomePage() {
       <ExpertSkincare />
       <GalleryCollection />
       <ConsultationBanner onBookAppointment={openAppointment} />
+      <InstaReels />
       <LatestNews />
       <ExclusiveUpdate />
       <Footer />
