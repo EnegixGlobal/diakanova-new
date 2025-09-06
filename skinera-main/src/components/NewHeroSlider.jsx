@@ -4,6 +4,7 @@ import imgThree from "../../Images/clinic-images/3.jpg";
 import doctorImg from "../../Images/Doctor-img/1.jpeg";
 import heroReplace from "../../Images/misc/1.png";
 import heroTagline from "../../Images/misc/2.png";
+import heroFive from "../../Images/misc/5.png";
 
 // Slides order (moved Doctor as the second slide). Flags drive behavior instead of hardcoded indexes.
 const slides = [
@@ -35,11 +36,11 @@ const slides = [
     noGradient: true,
     noAuto: true,
   },
-  // 5) Regular video with caption
+  // 5) Image with caption (replaced previous video)
   {
-    type: "video",
-    src: "https://www.pexels.com/download/video/4264904/",
-    alt: "Clinic video 2",
+    type: "image",
+    src: heroFive,
+    alt: "Clinic ambiance",
   },
 ];
 
@@ -55,8 +56,8 @@ const captions = [
   null, // Duplicate doctor slide also no caption
   null, // Static image with no caption
   {
-    h: "Ultimate Treatment Skin & Glow",
-    p: "Ultimate care with well-crafted plans. Protocol-based, kindly, and steadfast.",
+    h: "Healthy Roots, Gorgeous Locks",
+    p: "Strength-focused, scientifically crafted, and caring",
   },
 ];
 
