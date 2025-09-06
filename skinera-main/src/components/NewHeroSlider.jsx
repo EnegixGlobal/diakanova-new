@@ -27,14 +27,13 @@ const slides = [
     hideDoctorPhoto: true,
     noCaption: true,
   },
-  // 4) Image without caption/gradient and static (no auto-advance)
+  // 4) Image without caption/gradient (now auto-advances after 4s)
   {
     type: "image",
     src: imgThree,
     alt: "Clinic interior",
     noCaption: true,
     noGradient: true,
-    noAuto: true,
   },
   // 5) Image with caption (replaced previous video)
   {
@@ -88,36 +87,24 @@ export default function NewHeroSlider({ onBookAppointment }) {
   const goNext = () => setIndex((i) => (i + 1) % slides.length);
   const goPrev = () => setIndex((i) => (i - 1 + slides.length) % slides.length);
 
-  // Auto-advance: images (4s), videos (default 7s), per-slide override, pause on hover/focus
+  // Auto-advance unified: images (4s) or custom duration; videos (7s default). Removed noAuto logic to prevent accidental stops.
   useEffect(() => {
-    // cleanup any existing
     if (timerRef.current) {
       clearTimeout(timerRef.current);
       timerRef.current = null;
     }
-
     const current = slides[index];
-    if (paused) {
-      // When paused (hover/focus), stop auto-advance and avoid re-scheduling.
-      return;
-    }
+    if (paused) return;
 
-    // Respect per-slide static behavior
-    if (current.noAuto) return;
+    const duration =
+      current.type === "video"
+        ? current.durationMs || VIDEO_DURATION
+        : current.durationMs || IMAGE_DURATION;
 
-    if (current.type === "image") {
-      // Advance after 4s on images
-      timerRef.current = setTimeout(goNext, IMAGE_DURATION);
-    } else {
-      // For video, play and advance after specified duration (default 7s)
-      const v = videoRef.current;
-      const duration = current.durationMs || VIDEO_DURATION;
-      if (v) {
-        // Do not reset currentTime so the video doesn't jump when resuming from hover.
-        v.play().catch(() => {});
-        timerRef.current = setTimeout(goNext, duration);
-      }
+    if (current.type === "video" && videoRef.current) {
+      videoRef.current.play().catch(() => {});
     }
+    timerRef.current = setTimeout(goNext, duration);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
