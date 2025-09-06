@@ -12,6 +12,7 @@ import ExpertSkincare from "./ExpertSkincare.jsx";
 import GalleryCollection from "./GalleryCollection.jsx";
 import ConsultationBanner from "./ConsultationBanner.jsx";
 import LatestNews from "./LatestNews.jsx";
+import FAQ from "./FAQ.jsx";
 import ExclusiveUpdate from "./ExclusiveUpdate.jsx";
 import Footer from "./Footer.jsx";
 import AppointmentModal from "./AppointmentModal.jsx";
@@ -41,6 +42,7 @@ export default function HomePage() {
       <ConsultationBanner onBookAppointment={openAppointment} />
       <InstaReels />
       <GoogleReviewsAutoSlider autoSlideInterval={4000} showControls={true} />
+      <FAQ />
       <LatestNews />
       <ExclusiveUpdate />
       <Footer />
