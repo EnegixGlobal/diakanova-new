@@ -5,6 +5,7 @@ import Footer from "./Footer.jsx";
 import AppointmentModal from "./AppointmentModal.jsx";
 import HeroThree from "./HeroThree.jsx";
 import { getServiceById } from "../data/mockData";
+import { getExpandedService } from "../data/servicesExpanded";
 import bgFlower from "../../Images/Our-Service/bg-Flower-png-Use-It-InLargeWidth.png";
 import ServiceExtras from "./ServiceExtras.jsx";
 import ClientFaq from "./ClientFaq.jsx";
@@ -24,7 +25,8 @@ export default function ServiceDetail({ serviceId }) {
   const effectiveId =
     serviceId || (params ? params.id : undefined) || "anti-aging";
 
-  const service = getServiceById(effectiveId);
+  const service =
+    getExpandedService(effectiveId) || getServiceById(effectiveId);
 
   if (!service) {
     return <div className="text-center py-20">Service not found</div>;

@@ -60,12 +60,20 @@ export default function Appointment() {
           <div>
             <label className="block text-sm text-gray-700 mb-1">Service</label>
             <select className="w-full px-4 py-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-[#c98963] focus:border-transparent">
-              <option>Face Treatment</option>
-              <option>Manicure</option>
-              <option>Lips Treatment</option>
-              <option>Pedicure</option>
-              <option>Filler & Botox</option>
-              <option>Body Care</option>
+              <option>Pigmentation Solutions</option>
+              <option>Skin Tightening</option>
+              <option>Hair PRP</option>
+              <option>HAIR GFC</option>
+              <option>Hair Regrowth Laser</option>
+              <option>Korean Skin Treatment</option>
+              <option>Botox Treatment</option>
+              <option>Anti-aging Solutions</option>
+              <option>Deep Peelings</option>
+              <option>Facials</option>
+              <option>Laser Hair Removal</option>
+              <option>Laser Skin Therapy</option>
+              <option>Mesotherapy</option>
+              <option>Microdermabrasion</option>
             </select>
           </div>
 

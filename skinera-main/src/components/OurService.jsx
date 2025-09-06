@@ -3,12 +3,8 @@ import { Link } from "react-router-dom";
 
 // Decorative background and service images
 import bgFlower from "../../Images/Our-Service/bg-Flower-png-Use-It-InLargeWidth.png";
-import face from "../../Images/Our-Service/girl-use-facecream-ontheir-face.jpg";
-import manicure from "../../Images/Our-Service/imgi_50_beautiful-female-hands-woman-hands-with-beautiful-french-manicure-nails-.jpg";
-import lips from "../../Images/Our-Service/imgi_51_woman-getting-cosmetic-injection-of-botox-in-lips-closeup-.jpg";
-import pedicure from "../../Images/Our-Service/imgi_52_female-feet-with-white-french-pedicure-on-nails-at-spa-salon.jpg";
-import filler from "../../Images/Our-Service/imgi_53_hyaluronic-acid-injection-fillers-for-cheeks.jpg";
-import body from "../../Images/Our-Service/imgi_54_skincare-bodycare-beauty-and-bath-concept-close-up-of-attractive-naked-asian-woman-in-shower.jpg";
+// We'll map services from expanded data; fallback images already in dataset
+import { servicesExpanded } from "../data/servicesExpanded";
 
 const Card = ({ img, title, onBook, linkTo = "/service/anti-aging" }) => (
   <div className="relative">
@@ -67,50 +63,36 @@ export default function OurService({ onBookAppointment }) {
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Grid dynamically from expanded services subset (ordered) */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-          {/* Face Treatment → Facials */}
-          <Card
-            img={face}
-            title="Face Treatment"
-            onBook={onBookAppointment}
-            linkTo="/service/facials"
-          />
-          {/* Manicure → own service */}
-          <Card
-            img={manicure}
-            title="Manicure"
-            onBook={onBookAppointment}
-            linkTo="/service/manicure"
-          />
-          {/* Lips Treatment → Filler */}
-          <Card
-            img={lips}
-            title="Lips Treatment"
-            onBook={onBookAppointment}
-            linkTo="/service/filler"
-          />
-          {/* Pedicure → own service (spelling fix) */}
-          <Card
-            img={pedicure}
-            title="Pedicure"
-            onBook={onBookAppointment}
-            linkTo="/service/pedicure"
-          />
-          {/* Filler & Botox → Botox Treatment */}
-          <Card
-            img={filler}
-            title="Filler & Botox"
-            onBook={onBookAppointment}
-            linkTo="/service/botox-treatment"
-          />
-          {/* Body Care → Anti-aging solutions */}
-          <Card
-            img={body}
-            title="Body Care"
-            onBook={onBookAppointment}
-            linkTo="/service/anti-aging"
-          />
+          {[
+            "pigmentation-solutions",
+            "skin-tightening",
+            "hair-prp",
+            "hair-gfc",
+            "hair-regrowth-laser",
+            "korean-skin-treatment",
+            "botox-treatment",
+            "anti-aging-solutions",
+            "deep-peelings",
+            "facials",
+            "laser-hair-removal",
+            "laser-skin-therapy",
+            "mesotherapy",
+            "microdermabrasion",
+          ].map((id) => {
+            const svc = servicesExpanded.find((s) => s.id === id);
+            if (!svc) return null;
+            return (
+              <Card
+                key={id}
+                img={svc.image}
+                title={svc.title}
+                onBook={onBookAppointment}
+                linkTo={`/service/${id}`}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
