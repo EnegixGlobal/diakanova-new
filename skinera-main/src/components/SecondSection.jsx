@@ -21,9 +21,6 @@ export default function SecondSection() {
             Consistent Care Creates
             <br className="hidden sm:block" /> Lasting Glow
           </h2>
-          <button className="mt-6 inline-block bg-[#c98963] text-white px-6 py-3 text-sm sm:text-base hover:bg-[#be7f58] transition-colors">
-            Learn More
-          </button>
         </div>
 
         {/* Grid layout - large screens mirrors the reference composition */}
@@ -43,9 +40,6 @@ export default function SecondSection() {
               Consistent Care Creates
               <br /> Lasting Glow
             </h2>
-            <button className="mt-6 inline-block bg-[#c98963] text-white px-6 py-3 hover:bg-[#be7f58] transition-colors">
-              Learn More
-            </button>
           </div>
 
           <figure className="lg:col-span-4 lg:row-start-1 lg:col-start-9">

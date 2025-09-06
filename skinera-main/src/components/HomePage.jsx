@@ -6,8 +6,7 @@ import SecondSection from "./SecondSection.jsx";
 import OurService from "./OurService.jsx";
 import AboutUs from "./AboutUs.jsx";
 import FounderMessage from "./FounderMessage.jsx";
-import WhyChooseUs from "./WhyChooseUs.jsx";
-import StorySection from "./StorySection.jsx";
+import WhyChooseUs2 from "./WhyChooseUs2.jsx";
 import GoogleReviewsAutoSlider from "./GoogleReviewsAutoSlider.jsx";
 import ExpertSkincare from "./ExpertSkincare.jsx";
 import GalleryCollection from "./GalleryCollection.jsx";
@@ -36,8 +35,7 @@ export default function HomePage() {
       <OurService onBookAppointment={openAppointment} />
       <AboutUs />
       <FounderMessage />
-      <WhyChooseUs />
-      <StorySection />
+      <WhyChooseUs2 />
       <ExpertSkincare />
       <GalleryCollection />
       <ConsultationBanner onBookAppointment={openAppointment} />
