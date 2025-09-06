@@ -296,10 +296,12 @@ export default function NewHeroSlider({ onBookAppointment }) {
                         Founder & Lead Cosmetologist
                       </p>
                       <div className="mt-4 space-y-3 text-white/95 text-sm sm:text-base">
-                        <div className="max-w-xl leading-relaxed">
-                          Qualified cosmetologist & founder of DSkinova focused
-                          on healthy, radiant skin & hair through
-                          evidence‑based, personalised care.
+                        <div className="max-w-xl">
+                          <p className="leading-relaxed bg-black/45 px-4 py-3 rounded-xl shadow-md ring-1 ring-white/10 backdrop-blur-[2px]">
+                            Qualified cosmetologist & founder of DSkinova
+                            focused on healthy, radiant skin & hair through
+                            evidence‑based, personalised care.
+                          </p>
                         </div>
                         <div>
                           <a
