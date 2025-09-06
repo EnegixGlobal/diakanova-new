@@ -19,7 +19,7 @@ export default function DoctorBio() {
             <div className="text-[#333] leading-7 space-y-3 text-[0.95rem] md:text-base max-w-[620px]">
               <p>
                 Qualified cosmetologist and founder of DSkinova with 3+ years of
-                experience in clinical and aesthetic dermatology. Focused on
+                experience in clinical and aesthetic cosmetology. Focused on
                 healthy, radiant skin and hair through evidence‑based,
                 personalized care.
               </p>

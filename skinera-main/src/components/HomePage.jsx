@@ -33,9 +33,9 @@ export default function HomePage() {
       <NewHeroSlider onBookAppointment={openAppointment} />
       <SecondSection />
       <OurService onBookAppointment={openAppointment} />
+      <WhyChooseUs2 />
       <AboutUs />
       <FounderMessage />
-      <WhyChooseUs2 />
       <ExpertSkincare />
       <GalleryCollection />
       <ConsultationBanner onBookAppointment={openAppointment} />

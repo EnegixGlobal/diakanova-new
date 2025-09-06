@@ -42,7 +42,7 @@ export default function FounderMessage() {
                 <p>
                   I’m <span className="font-semibold">Dr. Kirti Kothari</span> —
                   a cosmetologist with over three years of experience across
-                  clinical and aesthetic dermatology. As founder of
+                  clinical and aesthetic cosmetology. As founder of
                   <span className="font-semibold"> DSkinova</span>, my focus is
                   helping people feel confident in their skin and hair through
                   evidence‑based, personalized care.

@@ -13,14 +13,14 @@ export default function WhyChooseUs2() {
         {/* Left Content */}
         <div className="lg:col-span-6">
           <p className="text-sm font-medium tracking-wide text-gray-600 mb-4">
-            Why Choose Skinaite Clinic
+            Why Choose DSkinova Clinic
           </p>
           <h2 className="font-domine font-medium text-[#4d1f1a] text-4xl sm:text-5xl leading-tight mb-6">
-            Why Choose Skinaite for <br className="hidden sm:block" /> Skin,
+            Why Choose DSkinova for <br className="hidden sm:block" /> Skin,
             Hair, and Cosmetic <br className="hidden sm:block" /> Treatments?
           </h2>
           <p className="text-gray-600 leading-relaxed max-w-xl mb-8">
-            At <span className="font-semibold">Skinaite</span>, we are committed
+            At <span className="font-semibold">DSkinova</span>, we are committed
             to helping you achieve and maintain healthy, radiant skin. Trust us
             for exceptional care tailored to your unique needs.
           </p>
@@ -39,7 +39,7 @@ export default function WhyChooseUs2() {
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed max-w-md">
                   We understand that every individual is different. Our expert
-                  dermatologists create customized treatment plans to address
+                  cosmetologists create customized treatment plans to address
                   your specific concerns.
                 </p>
               </div>
@@ -54,9 +54,9 @@ export default function WhyChooseUs2() {
                   Comprehensive Skin & Hair Solutions
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed max-w-md">
-                  From medical dermatology to cosmetic enhancements, we offer a
-                  full range of advanced treatments to enhance your beauty and
-                  confidence.
+                  From corrective skin science to cosmetic enhancements, we
+                  offer a full range of advanced treatments to enhance your
+                  beauty and confidence.
                 </p>
               </div>
             </div>
