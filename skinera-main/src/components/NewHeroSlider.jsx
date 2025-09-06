@@ -2,17 +2,17 @@ import React, { useEffect, useRef, useState } from "react";
 import imgClinic from "../../Images/clinic-images/clinic.webp";
 import imgThree from "../../Images/clinic-images/3.jpg";
 import doctorImg from "../../Images/Doctor-img/1.jpeg";
+import heroReplace from "../../Images/misc/1.png";
 
 // Slides order (moved Doctor as the second slide). Flags drive behavior instead of hardcoded indexes.
 const slides = [
   // 1) Image with caption
   { type: "image", src: imgClinic, alt: "Clinic reception" },
-  // 2) Doctor feature video (10s) with custom overlay
+  // 2) Replaced doctor video with static image
   {
-    type: "video",
-    src: "https://www.pexels.com/download/video/7581711/",
-    alt: "Doctor feature video",
-    durationMs: 10000,
+    type: "image",
+    src: heroReplace,
+    alt: "Featured clinic moment",
     doctor: true,
     noCaption: true,
   },
@@ -224,8 +224,14 @@ export default function NewHeroSlider({ onBookAppointment }) {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[56vh] sm:min-h-[65vh] lg:min-h-[70vh] grid grid-cols-1 lg:grid-cols-2 items-center">
-        {/* Left: heading + optional inline form overlay on first slide */}
-        <div className="py-14 sm:py-16 lg:py-0 lg:pr-8 z-20">
+        {/* Left: heading + optional inline form overlay on first slide; full-width centered for doctor slide */}
+        <div
+          className={`py-14 sm:py-16 lg:py-0 z-20 ${
+            isDoctorSlide
+              ? "lg:col-span-2 flex flex-col items-center justify-center text-center lg:pr-0"
+              : "lg:pr-8"
+          }`}
+        >
           {/* Show captions when not doctor and not suppressed by slide */}
           {!isDoctorSlide && !current.noCaption && cap && (
             <>
@@ -246,8 +252,8 @@ export default function NewHeroSlider({ onBookAppointment }) {
 
           {/* Doctor overlay on the 5th slide */}
           {isDoctorSlide && (
-            <div className="py-2">
-              <div className="flex items-center gap-5 sm:gap-8">
+            <div className="py-2 w-full">
+              <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 justify-center">
                 {/* Circular doctor portrait with subtle ring */}
                 <div className="relative">
                   <div className="rounded-full p-1 ring-4 ring-white/90 shadow-2xl">
@@ -353,8 +359,8 @@ export default function NewHeroSlider({ onBookAppointment }) {
           )}
         </div>
 
-        {/* Right column preserved for spacing only (background covers entire hero) */}
-        <div className="hidden lg:block" />
+        {/* Right column placeholder only when not doctor slide */}
+        {!isDoctorSlide && <div className="hidden lg:block" />}
       </div>
 
       {/* Prev/Next arrows */}
