@@ -3,12 +3,13 @@ import imgClinic from "../../Images/clinic-images/clinic.webp";
 import imgThree from "../../Images/clinic-images/3.jpg";
 import doctorImg from "../../Images/Doctor-img/1.jpeg";
 import heroReplace from "../../Images/misc/1.png";
+import heroTagline from "../../Images/misc/2.png";
 
 // Slides order (moved Doctor as the second slide). Flags drive behavior instead of hardcoded indexes.
 const slides = [
   // 1) Image with caption
   { type: "image", src: imgClinic, alt: "Clinic reception" },
-  // 2) Replaced doctor video with static image
+  // 2) Doctor image (replaced former video)
   {
     type: "image",
     src: heroReplace,
@@ -16,11 +17,14 @@ const slides = [
     doctor: true,
     noCaption: true,
   },
-  // 3) Regular video with caption
+  // 3) Tagline slide using different background image
   {
-    type: "video",
-    src: "https://www.pexels.com/download/video/5524244/",
-    alt: "Clinic video 1",
+    type: "image",
+    src: heroTagline,
+    alt: "Confidence tagline background",
+    doctor: true,
+    hideDoctorPhoto: true,
+    noCaption: true,
   },
   // 4) Image without caption/gradient and static (no auto-advance)
   {
@@ -48,10 +52,7 @@ const captions = [
     p: "Elevated care with personalised paths. Science-backed, softer, and efficient.",
   },
   null, // Doctor slide uses custom overlay
-  {
-    h: "Elevated Confident Skin & Glow",
-    p: "Enhanced help with customizable plans. Scientist-led, caring, and assuredly.",
-  },
+  null, // Duplicate doctor slide also no caption
   null, // Static image with no caption
   {
     h: "Ultimate Treatment Skin & Glow",
@@ -194,12 +195,12 @@ export default function NewHeroSlider({ onBookAppointment }) {
         {current.type === "image" ? (
           <img
             src={current.src}
-            alt={current.alt}
+            alt={current.alt || ""}
             className="w-full h-full object-cover"
+            draggable={false}
           />
         ) : (
           <video
-            key={current.src}
             ref={videoRef}
             src={current.src}
             autoPlay
@@ -208,7 +209,7 @@ export default function NewHeroSlider({ onBookAppointment }) {
             controls={false}
             loop={false}
             onEnded={(e) => {
-              // Do not loop on hover; keep the last frame.
+              // Do not loop automatically; keep the last frame when finished.
               e.currentTarget.pause();
             }}
             className="w-full h-full object-cover"
@@ -223,12 +224,18 @@ export default function NewHeroSlider({ onBookAppointment }) {
           ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[56vh] sm:min-h-[65vh] lg:min-h-[70vh] grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div
+        className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[56vh] sm:min-h-[65vh] lg:min-h-[70vh] ${
+          isDoctorSlide
+            ? "flex items-center justify-center"
+            : "grid grid-cols-1 lg:grid-cols-2 items-center"
+        }`}
+      >
         {/* Left: heading + optional inline form overlay on first slide; full-width centered for doctor slide */}
         <div
           className={`py-14 sm:py-16 lg:py-0 z-20 ${
             isDoctorSlide
-              ? "lg:col-span-2 flex flex-col items-center justify-center text-center lg:pr-0"
+              ? "w-full max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-center text-center gap-6 lg:pr-0"
               : "lg:pr-8"
           }`}
         >
@@ -253,55 +260,79 @@ export default function NewHeroSlider({ onBookAppointment }) {
           {/* Doctor overlay on the 5th slide */}
           {isDoctorSlide && (
             <div className="py-2 w-full">
-              <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 justify-center">
-                {/* Circular doctor portrait with subtle ring */}
-                <div className="relative">
-                  <div className="rounded-full p-1 ring-4 ring-white/90 shadow-2xl">
-                    <img
-                      src={doctorImg}
-                      alt="Dr. Kirti Kothari"
-                      className="w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full object-cover"
-                    />
+              <div
+                className={`flex flex-col ${
+                  current.hideDoctorPhoto
+                    ? "items-center text-center gap-6"
+                    : "lg:flex-row items-center gap-6 sm:gap-8"
+                } justify-center`}
+              >
+                {current.hideDoctorPhoto ? (
+                  <div className="max-w-4xl text-center space-y-6">
+                    <h2
+                      className="font-domine font-medium text-white text-4xl sm:text-5xl md:text-6xl leading-tight"
+                      style={{ textShadow: "0 2px 10px rgba(0,0,0,0.65)" }}
+                    >
+                      Love the Skin You’re In
+                    </h2>
+                    <div className="w-24 h-1 mx-auto bg-white/70 rounded-full" />
+                    <p
+                      className="text-white/90 text-lg sm:text-xl md:text-2xl font-light tracking-wide leading-snug max-w-3xl mx-auto"
+                      style={{ textShadow: "0 1px 6px rgba(0,0,0,0.55)" }}
+                    >
+                      Because beauty begins with confidence.
+                    </p>
                   </div>
-                </div>
-                {/* Textual details */}
-                <div className="max-w-2xl">
-                  <h2
-                    className="font-domine font-medium text-white text-4xl sm:text-5xl md:text-6xl leading-tight"
-                    style={{ textShadow: "0 2px 8px rgba(0,0,0,0.65)" }}
-                  >
-                    Dr. Kirti Kothari
-                  </h2>
-                  <p
-                    className="mt-2 text-white/90 text-lg sm:text-xl"
-                    style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
-                  >
-                    Founder & Lead Cosmetologist
-                  </p>
-                  <div className="mt-4 space-y-1.5 text-white/95 text-sm sm:text-base">
-                    <div>
-                      <a
-                        href="tel:+917878867379"
-                        className="underline-offset-4 hover:underline"
+                ) : (
+                  <>
+                    <div className="relative">
+                      <div className="rounded-full p-1 ring-4 ring-white/90 shadow-2xl">
+                        <img
+                          src={doctorImg}
+                          alt="Dr. Kirti Kothari"
+                          className="w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div className="max-w-2xl">
+                      <h2
+                        className="font-domine font-medium text-white text-4xl sm:text-5xl md:text-6xl leading-tight"
+                        style={{ textShadow: "0 2px 8px rgba(0,0,0,0.65)" }}
                       >
-                        +91 78788 67379
-                      </a>
-                    </div>
-                    <div className="max-w-xl">
-                      2nd Floor, A-2, Mall Rd, opposite MAHESHWARI GIRLS PUBLIC
-                      SCHOOL, Sector-3, Ambabari, Naya Khera, Vidyadhar Nagar,
-                      Jaipur, Rajasthan 302029
-                    </div>
-                    <div>
-                      <a
-                        href="mailto:care@dskinova.in"
-                        className="underline-offset-4 hover:underline"
+                        Dr. Kirti Kothari
+                      </h2>
+                      <p
+                        className="mt-2 text-white/90 text-lg sm:text-xl"
+                        style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                       >
-                        care@dskinova.in
-                      </a>
+                        Founder & Lead Cosmetologist
+                      </p>
+                      <div className="mt-4 space-y-1.5 text-white/95 text-sm sm:text-base">
+                        <div>
+                          <a
+                            href="tel:+917878867379"
+                            className="underline-offset-4 hover:underline"
+                          >
+                            +91 78788 67379
+                          </a>
+                        </div>
+                        <div className="max-w-xl">
+                          2nd Floor, A-2, Mall Rd, opposite MAHESHWARI GIRLS
+                          PUBLIC SCHOOL, Sector-3, Ambabari, Naya Khera,
+                          Vidyadhar Nagar, Jaipur, Rajasthan 302029
+                        </div>
+                        <div>
+                          <a
+                            href="mailto:care@dskinova.in"
+                            className="underline-offset-4 hover:underline"
+                          >
+                            care@dskinova.in
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </>
+                )}
               </div>
             </div>
           )}
