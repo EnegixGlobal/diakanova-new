@@ -295,7 +295,12 @@ export default function NewHeroSlider({ onBookAppointment }) {
                       >
                         Founder & Lead Cosmetologist
                       </p>
-                      <div className="mt-4 space-y-1.5 text-white/95 text-sm sm:text-base">
+                      <div className="mt-4 space-y-3 text-white/95 text-sm sm:text-base">
+                        <div className="max-w-xl leading-relaxed">
+                          Qualified cosmetologist & founder of DSkinova focused
+                          on healthy, radiant skin & hair through
+                          evidence‑based, personalised care.
+                        </div>
                         <div>
                           <a
                             href="tel:+917878867379"
@@ -303,11 +308,6 @@ export default function NewHeroSlider({ onBookAppointment }) {
                           >
                             +91 78788 67379
                           </a>
-                        </div>
-                        <div className="max-w-xl">
-                          2nd Floor, A-2, Mall Rd, opposite MAHESHWARI GIRLS
-                          PUBLIC SCHOOL, Sector-3, Ambabari, Naya Khera,
-                          Vidyadhar Nagar, Jaipur, Rajasthan 302029
                         </div>
                         <div>
                           <a
