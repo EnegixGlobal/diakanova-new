@@ -157,8 +157,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MailIcon className="w-5 h-5 mt-0.5 text-white" />
-                <a href="mailto:care@dskinova.in" className="hover:text-white">
-                  care@dskinova.in
+                <a
+                  href="mailto:dskinova@gmail.com"
+                  className="hover:text-white"
+                >
+                  dskinova@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">

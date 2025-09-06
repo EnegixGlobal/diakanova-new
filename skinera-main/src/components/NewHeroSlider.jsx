@@ -55,8 +55,8 @@ const captions = [
   null, // Duplicate doctor slide also no caption
   null, // Static image with no caption
   {
-    h: "Healthy Roots, Gorgeous Locks",
-    p: "Strength-focused, scientifically crafted, and caring",
+    h: "Transform Your Hair, Transform Your Look",
+    p: "Because silky, healthy hair never goes out of style.",
   },
 ];
 
@@ -261,14 +261,14 @@ export default function NewHeroSlider({ onBookAppointment }) {
                       className="font-domine font-medium text-white text-4xl sm:text-5xl md:text-6xl leading-tight"
                       style={{ textShadow: "0 2px 10px rgba(0,0,0,0.65)" }}
                     >
-                      Love the Skin You’re In
+                      Advanced Skin Care & Glow
                     </h2>
                     <div className="w-24 h-1 mx-auto bg-white/70 rounded-full" />
                     <p
                       className="text-white/90 text-lg sm:text-xl md:text-2xl font-light tracking-wide leading-snug max-w-3xl mx-auto"
                       style={{ textShadow: "0 1px 6px rgba(0,0,0,0.55)" }}
                     >
-                      Because beauty begins with confidence.
+                      Because radiant, healthy skin is for everyone.
                     </p>
                   </div>
                 ) : (
@@ -313,10 +313,10 @@ export default function NewHeroSlider({ onBookAppointment }) {
                         </div>
                         <div>
                           <a
-                            href="mailto:care@dskinova.in"
+                            href="mailto:dskinova@gmail.com"
                             className="underline-offset-4 hover:underline"
                           >
-                            care@dskinova.in
+                            dskinova@gmail.com
                           </a>
                         </div>
                       </div>
