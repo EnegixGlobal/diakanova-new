@@ -5,6 +5,8 @@ import doctorImg from "../../Images/Doctor-img/1.jpeg";
 import heroReplace from "../../Images/misc/1.png";
 import heroTagline from "../../Images/misc/2.png";
 import heroFive from "../../Images/misc/5.png";
+import mobSkin from "../../Images/misc/mob-skin.jpg";
+import mobHair from "../../Images/misc/mob-hair.jpeg";
 
 // Slides order (moved Doctor as the second slide). Flags drive behavior instead of hardcoded indexes.
 const slides = [
@@ -22,6 +24,7 @@ const slides = [
   {
     type: "image",
     src: heroTagline,
+    mobileSrc: mobSkin, // Mobile-only replacement image
     alt: "Confidence tagline background",
     doctor: true,
     hideDoctorPhoto: true,
@@ -39,6 +42,7 @@ const slides = [
   {
     type: "image",
     src: heroFive,
+    mobileSrc: mobHair, // Mobile-only replacement image
     alt: "Clinic ambiance",
   },
 ];
@@ -63,6 +67,7 @@ const captions = [
 export default function NewHeroSlider({ onBookAppointment }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const timerRef = useRef(null);
   const videoRef = useRef(null);
   // Slide durations (ms)
@@ -82,6 +87,21 @@ export default function NewHeroSlider({ onBookAppointment }) {
       return () => clearTimeout(t);
     }
   }, [cbSent, cbError]);
+
+  // Track mobile breakpoint (Tailwind 'sm' breakpoint ~640px)
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const handler = (e) => setIsMobile(e.matches);
+    setIsMobile(mq.matches);
+    try {
+      mq.addEventListener("change", handler);
+      return () => mq.removeEventListener("change", handler);
+    } catch (_) {
+      // Safari fallback
+      mq.addListener(handler);
+      return () => mq.removeListener(handler);
+    }
+  }, []);
 
   // Advance helpers
   const goNext = () => setIndex((i) => (i + 1) % slides.length);
@@ -182,7 +202,9 @@ export default function NewHeroSlider({ onBookAppointment }) {
       <div className="absolute inset-0 z-0">
         {current.type === "image" ? (
           <img
-            src={current.src}
+            src={
+              isMobile && current.mobileSrc ? current.mobileSrc : current.src
+            }
             alt={current.alt || ""}
             className="w-full h-full object-cover"
             draggable={false}
