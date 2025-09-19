@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../Images/Header/logo.png";
-import { skinMenu, hairMenu, getNested } from "../data/menuData.js";
+import { skinMenu, hairMenu, hemopathicMenu, getNested } from "../data/menuData.js";
 
 // Simple down-caret icon
 const CaretDown = ({ className = "w-3 h-3" }) => (
@@ -30,9 +30,14 @@ export default function Header({ onBookAppointment }) {
   const [hairOpen, setHairOpen] = useState(false);
   const [hairDesktopOpen, setHairDesktopOpen] = useState(false);
   const hairTimer = useRef(null);
+  // Hemopathic dropdown states
+  const [hemoOpen, setHemoOpen] = useState(false);
+  const [hemoDesktopOpen, setHemoDesktopOpen] = useState(false);
+  const hemoTimer = useRef(null);
   // Mobile nested toggles per item
   const [skinSubOpen, setSkinSubOpen] = useState({});
   const [hairSubOpen, setHairSubOpen] = useState({});
+  const [hemoSubOpen, setHemoSubOpen] = useState({});
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -53,8 +58,8 @@ export default function Header({ onBookAppointment }) {
   return (
     <header className="bg-white text-black relative z-50 border-b border-black/10">
       {/* Top contact bar */}
-      <div className="bg-white text-black text-xs sm:text-sm border-b border-black/10">
-        <div className="max-w-7xl mx-auto px-4 py-1.5 sm:py-2 flex items-center justify-between gap-1.5 sm:gap-3 flex-nowrap overflow-hidden">
+      <div className="bg-[#c67c54] text-white text-xs sm:text-sm border-b border-black/10 font-bold">
+        <div className="max-w-7xl  mx-auto px-4 py-1.5 sm:py-2 flex items-center justify-between gap-1.5 sm:gap-3 flex-nowrap overflow-hidden">
           {/* Phones + email */}
           <div className="flex items-center gap-x-2 sm:gap-x-4 flex-nowrap min-w-0">
             <a
@@ -91,6 +96,25 @@ export default function Header({ onBookAppointment }) {
                 dskinova@gmail.com
               </span>
             </a>
+            <div
+              className="hidden sm:inline-flex items-center gap-1.5  whitespace-nowrap"
+              aria-label="Clinic hours Mon - Sat: 10:00 - 07:00, Sun: 10:00 - 01:00"
+            >
+              {/* clock icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.75 5.25a.75.75 0 0 0-1.5 0v4.25a.75.75 0 0 0 .33.62l3 2a.75.75 0 1 0 .84-1.24l-2.67-1.78V7.5Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span>Mon - Sat: 10:00 - 07:00 | Sun: 10:00 - 01:00</span>
+            </div>
           </div>
 
           {/* Social icons */}
@@ -100,14 +124,14 @@ export default function Header({ onBookAppointment }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-black/20 text-black flex items-center justify-center hover:bg-black/5"
+              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-white/10"
             >
               {/* instagram */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4 "
               >
                 <path d="M7 2.25h10A4.75 4.75 0 0 1 21.75 7v10A4.75 4.75 0 0 1 17 21.75H7A4.75 4.75 0 0 1 2.25 17V7A4.75 4.75 0 0 1 7 2.25Zm0 1.5A3.25 3.25 0 0 0 3.75 7v10A3.25 3.25 0 0 0 7 20.25h10A3.25 3.25 0 0 0 20.25 17V7A3.25 3.25 0 0 0 17 3.75H7Zm5 3.5A4.75 4.75 0 1 1 7.25 12 4.75 4.75 0 0 1 12 7.25Zm0 1.5A3.25 3.25 0 1 0 15.25 12 3.25 3.25 0 0 0 12 8.75Zm5.125-2.375a.875.875 0 1 1-.875.875.875.875 0 0 1 .875-.875Z" />
               </svg>
@@ -117,7 +141,7 @@ export default function Header({ onBookAppointment }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-black/20 text-black flex items-center justify-center hover:bg-black/5"
+              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-white/10"
             >
               {/* youtube */}
               <svg
@@ -134,7 +158,7 @@ export default function Header({ onBookAppointment }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-black/20 text-black flex items-center justify-center hover:bg-black/5"
+              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-white/10"
             >
               {/* facebook */}
               <svg
@@ -151,7 +175,7 @@ export default function Header({ onBookAppointment }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-black/20 text-black flex items-center justify-center hover:bg-black/5"
+              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-white/10"
             >
               {/* linkedin */}
               <svg
@@ -176,7 +200,7 @@ export default function Header({ onBookAppointment }) {
                 src={logo}
                 alt="DSkinova — Professional Skincare & Cosmetology Clinic logo"
                 // Removed darkness filter per request
-                className="h-10 w-auto"
+                className="h-12 sm:h-14 w-auto"
               />
             </Link>
           </div>
@@ -185,13 +209,13 @@ export default function Header({ onBookAppointment }) {
           <nav className="hidden md:flex items-center justify-center gap-8">
             <Link
               to="/"
-              className="text-gray-800 hover:text-[#c67c54] transition-colors"
+              className="text-gray-800 hover:text-[#c67c54] transition-colors font-bold"
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="text-gray-700 hover:text-[#c67c54] transition-colors"
+              className="text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
             >
               AboutUs
             </Link>
@@ -212,7 +236,7 @@ export default function Header({ onBookAppointment }) {
             >
               <button
                 type="button"
-                className="inline-flex items-center gap-1 text-gray-700 hover:text-[#c67c54] transition-colors"
+                className="inline-flex items-center gap-1 text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
               >
                 Skin
                 <CaretDown
@@ -291,7 +315,7 @@ export default function Header({ onBookAppointment }) {
             >
               <button
                 type="button"
-                className="inline-flex items-center gap-1 text-gray-700 hover:text-[#c67c54] transition-colors"
+                className="inline-flex items-center gap-1 text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
               >
                 Hair
                 <CaretDown
@@ -352,29 +376,84 @@ export default function Header({ onBookAppointment }) {
                 })}
               </div>
             </div>
+            {/* Hemopathic dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => {
+                if (hemoTimer.current) clearTimeout(hemoTimer.current);
+                setHemoDesktopOpen(true);
+              }}
+              onMouseLeave={() => {
+                if (hemoTimer.current) clearTimeout(hemoTimer.current);
+                hemoTimer.current = setTimeout(
+                  () => setHemoDesktopOpen(false),
+                  120
+                );
+              }}
+            >
+              <button
+                type="button"
+                className="inline-flex items-center gap-1 text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
+              >
+                Hemopathic
+                <CaretDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    hemoDesktopOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`absolute left-0 top-full mt-2 min-w-[220px] bg-white text-[#c67c54] shadow-xl ring-1 ring-black/5 z-50 transition-opacity duration-150 ${
+                  hemoDesktopOpen
+                    ? "opacity-100 visible"
+                    : "opacity-0 invisible"
+                }`}
+                onMouseEnter={() => {
+                  if (hemoTimer.current) clearTimeout(hemoTimer.current);
+                  setHemoDesktopOpen(true);
+                }}
+                onMouseLeave={() => {
+                  if (hemoTimer.current) clearTimeout(hemoTimer.current);
+                  hemoTimer.current = setTimeout(
+                    () => setHemoDesktopOpen(false),
+                    120
+                  );
+                }}
+              >
+                {hemopathicMenu.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="px-4 py-2 hover:bg-[#f6e8e0] flex items-center justify-between"
+                  >
+                    <span>{item.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
 
             {/* Wellness, Gallery, Blogs */}
             <Link
               to="/wellness"
-              className="text-gray-700 hover:text-[#c67c54] transition-colors"
+              className="text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
             >
               Wellness
             </Link>
             <Link
               to="/gallery"
-              className="text-gray-700 hover:text-[#c67c54] transition-colors"
+              className="text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
             >
               Gallery
             </Link>
             <Link
               to="/news"
-              className="text-gray-700 hover:text-[#c67c54] transition-colors"
+              className="text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
             >
               Blogs
             </Link>
             <Link
               to="/contact"
-              className="text-gray-700 hover:text-[#c67c54] transition-colors"
+              className="text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
             >
               Contacts
             </Link>
@@ -385,7 +464,7 @@ export default function Header({ onBookAppointment }) {
             <button
               type="button"
               onClick={onBookAppointment}
-              className="hidden md:inline-block bg-[#c67c54] text-white px-6 lg:px-8 py-2.5 lg:py-3 text-base border border-transparent hover:bg-[#b8734a] transition-colors"
+              className="hidden md:inline-block bg-[#c67c54] text-white px-6 lg:px-8 py-2.5 lg:py-3 text-base border border-transparent hover:bg-[#b8734a] transition-colors font-bold"
               aria-label="Book appointment now"
             >
               Book Appointment Now
@@ -450,7 +529,7 @@ export default function Header({ onBookAppointment }) {
               <img
                 src={logo}
                 alt="DSkinova — Professional Skincare & Cosmetology Clinic logo"
-                className="h-8 w-auto filter brightness-75"
+                className="h-10 w-auto filter brightness-75"
               />
             </div>
             <button
@@ -478,14 +557,14 @@ export default function Header({ onBookAppointment }) {
           <nav className="px-4 py-3 overflow-y-auto h-[calc(100%-4rem)]">
             <Link
               to="/"
-              className="block py-3 text-base text-gray-800 border-b border-black/10"
+              className="block py-3 text-base text-gray-800 border-b border-black/10 font-bold"
               onClick={() => setOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="block py-3 text-base text-gray-800 border-b border-black/10"
+              className="block py-3 text-base text-gray-800 border-b border-black/10 font-bold"
               onClick={() => setOpen(false)}
             >
               AboutUs
@@ -494,7 +573,7 @@ export default function Header({ onBookAppointment }) {
             {/* Skin accordion */}
             <button
               type="button"
-              className="w-full flex items-center justify-between py-3 text-base text-gray-800 border-b border-black/10"
+              className="w-full flex items-center justify-between py-3 text-base text-gray-800 border-b border-black/10 font-bold"
               onClick={() => setSvcOpen((v) => !v)}
               aria-expanded={svcOpen}
             >
@@ -570,7 +649,7 @@ export default function Header({ onBookAppointment }) {
             {/* Hair accordion */}
             <button
               type="button"
-              className="w-full flex items-center justify-between py-3 text-base text-gray-800 border-b border-black/10"
+              className="w-full flex items-center justify-between py-3 text-base text-gray-800 border-b border-black/10 font-bold"
               onClick={() => setHairOpen((v) => !v)}
               aria-expanded={hairOpen}
             >
@@ -640,24 +719,55 @@ export default function Header({ onBookAppointment }) {
               })}
             </div>
 
+            {/* Hemopathic accordion */}
+            <button
+              type="button"
+              className="w-full flex items-center justify-between py-3 text-base text-gray-800 border-b border-black/10 font-bold"
+              onClick={() => setHemoOpen((v) => !v)}
+              aria-expanded={hemoOpen}
+            >
+              <span>Hemopathic</span>
+              <CaretDown
+                className={`w-4 h-4 transition-transform duration-200 ease-in-out ${
+                  hemoOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            <div
+              className={`pl-3 text-gray-700 overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${
+                hemoOpen ? "max-h-[60vh] opacity-100 pb-2" : "max-h-0 opacity-0"
+              }`}
+              aria-hidden={!hemoOpen}
+            >
+              {hemopathicMenu.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="block py-2"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
             {/* Extra links */}
             <Link
               to="/wellness"
-              className="block py-3 text-base text-gray-800 border-b border-black/10"
+              className="block py-3 text-base text-gray-800 border-b border-black/10 font-bold"
               onClick={() => setOpen(false)}
             >
               Wellness
             </Link>
             <Link
               to="/gallery"
-              className="block py-3 text-base text-gray-800 border-b border-black/10"
+              className="block py-3 text-base text-gray-800 border-b border-black/10 font-bold"
               onClick={() => setOpen(false)}
             >
               Gallery
             </Link>
             <Link
               to="/news"
-              className="block py-3 text-base text-gray-800 border-b border-black/10"
+              className="block py-3 text-base text-gray-800 border-b border-black/10 font-bold"
               onClick={() => setOpen(false)}
             >
               Blogs
@@ -666,7 +776,7 @@ export default function Header({ onBookAppointment }) {
             {/* Call now CTA */}
             <Link
               to="/contact"
-              className="block py-3 text-base text-gray-800 border-b border-black/10"
+              className="block py-3 text-base text-gray-800 border-b border-black/10 font-bold"
               onClick={() => setOpen(false)}
             >
               Contact Us

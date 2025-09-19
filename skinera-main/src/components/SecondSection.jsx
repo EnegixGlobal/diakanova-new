@@ -6,7 +6,7 @@ import girl from "../../Images/second-section/girl.jpg";
 import leaf from "../../Images/second-section/both-hand-on-leaf.jpg";
 import lemon from "../../Images/second-section/lemon-and-oil.jpg";
 
-export default function SecondSection() {
+export default function SecondSection({ onBookAppointment }) {
   return (
     <section className="relative bg-white overflow-hidden md:overflow-visible">
       {/* soft glow accents */}
@@ -34,12 +34,34 @@ export default function SecondSection() {
             />
           </figure>
 
-          {/* Center text at large screens */}
-          <div className="hidden lg:flex lg:col-span-4 lg:row-start-1 lg:col-start-5 flex-col items-center justify-center text-center px-4">
+          {/* Center text + action boxes at large screens */}
+          <div className="hidden lg:flex lg:col-span-4 lg:row-start-1 lg:col-start-5 lg:row-span-2 flex-col items-center justify-center text-center px-4 space-y-6">
             <h2 className="font-domine font-medium text-[#b37556] text-[34px] leading-snug">
               Consistent Care Creates
               <br /> Lasting Glow
             </h2>
+            {/* Top action box with Book Now button (no border) */}
+            <div className="w-full">
+              <div className="mx-auto w-[90%] rounded-xl py-6 flex items-center justify-center ">
+                <button
+                  type="button"
+                  onClick={onBookAppointment}
+                  className="bg-[#c67c54] text-white px-6 py-3 rounded-md shadow hover:bg-[#b8734a] focus:outline-none focus:ring-2 focus:ring-[#c67c54]/50"
+                  aria-label="Book appointment now"
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+            {/* Bottom caption box (styled like heading, no border) */}
+            <div className="w-full">
+              <div className="mx-auto w-[90%] rounded-xl py-6 flex items-center justify-center">
+                <p className="font-domine font-medium text-[#b37556] text-[34px] leading-snug text-center">
+                  For customised skin & hair
+                  <br /> treatment
+                </p>
+              </div>
+            </div>
           </div>
 
           <figure className="lg:col-span-4 lg:row-start-1 lg:col-start-9">
@@ -58,14 +80,15 @@ export default function SecondSection() {
               className="h-56 sm:h-64 md:h-72 lg:h-[340px] w-full object-cover shadow-xl"
             />
           </figure>
+          
 
-          <figure className="md:col-span-1 lg:col-span-4 lg:row-start-2 lg:col-start-5">
+          {/* <figure className="md:col-span-1 lg:col-span-4 lg:row-start-2 lg:col-start-5">
             <img
               src={leaf}
               alt="Hands on green leaf"
               className="h-72 sm:h-80 md:h-96 lg:h-[420px] xl:h-[460px] w-full object-cover shadow-xl"
             />
-          </figure>
+          </figure> */}
 
           <figure className="md:col-span-1 lg:col-span-4 lg:row-start-2 lg:col-start-9">
             <img

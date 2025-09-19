@@ -8,6 +8,7 @@ import AboutUs from "./AboutUs.jsx";
 import FounderMessage from "./FounderMessage.jsx";
 import WhyChooseUs2 from "./WhyChooseUs2.jsx";
 import GoogleReviewsAutoSlider from "./GoogleReviewsAutoSlider.jsx";
+import JustdialReviewsAutoSlider from "./JustdialReviewsAutoSlider.jsx";
 import ExpertSkincare from "./ExpertSkincare.jsx";
 import GalleryCollection from "./GalleryCollection.jsx";
 import ConsultationBanner from "./ConsultationBanner.jsx";
@@ -17,6 +18,7 @@ import ExclusiveUpdate from "./ExclusiveUpdate.jsx";
 import Footer from "./Footer.jsx";
 import AppointmentModal from "./AppointmentModal.jsx";
 import InstaReels from "./InstaReels.jsx";
+import YouTubeReels from "./YouTubeReels.jsx";
 
 export default function HomePage() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -32,7 +34,7 @@ export default function HomePage() {
       <Header onBookAppointment={openAppointment} />
       {/* <Hero onBookAppointment={openAppointment} /> */}
       <NewHeroSlider onBookAppointment={openAppointment} />
-      <SecondSection />
+  <SecondSection onBookAppointment={openAppointment} />
       <OurService onBookAppointment={openAppointment} />
       <WhyChooseUs2 />
       <AboutUs />
@@ -41,7 +43,25 @@ export default function HomePage() {
       <GalleryCollection />
       <ConsultationBanner onBookAppointment={openAppointment} />
       <InstaReels />
+      <YouTubeReels
+        title="Our YouTube Shorts"
+        channelUrl="https://www.youtube.com/@DSKINOVA"
+        shorts={[
+          "https://www.youtube.com/shorts/DvfaYu7sab0",
+          "https://www.youtube.com/shorts/tzi_7DWIrDk",
+          "https://www.youtube.com/shorts/rHpx5qm-RkU",
+          "https://www.youtube.com/shorts/uboMImQrmDM",
+          "https://www.youtube.com/shorts/tBhBfmo2XQg",
+          // the last link was repeated, Set ensures de-duplication inside component
+          "https://www.youtube.com/shorts/tBhBfmo2XQg",
+        ]}
+      />
       <GoogleReviewsAutoSlider autoSlideInterval={4000} showControls={true} />
+      <JustdialReviewsAutoSlider
+        autoSlideInterval={4000}
+        showControls={true}
+        justdialUrl="#"
+      />
       <FAQ />
       <LatestNews />
       <ExclusiveUpdate />

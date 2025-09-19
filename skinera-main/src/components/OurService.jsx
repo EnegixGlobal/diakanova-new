@@ -14,20 +14,20 @@ const Card = ({ img, title, onBook, linkTo = "/service/anti-aging" }) => (
       className="w-full h-64 sm:h-72 md:h-80 object-cover shadow-md"
     />
     <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 bg-white shadow-[0_10px_20px_rgba(0,0,0,0.12)] px-6 sm:px-8 py-4 w-[86%] sm:w-[78%] text-center">
-      <h3 className="font-domine text-[#b37556] text-lg sm:text-xl font-medium">
+      <h3 className="font-domine text-[#b37556] text-base sm:text-lg font-medium leading-snug whitespace-normal break-words [hyphens:auto]">
         {title}
       </h3>
-      <div className="mt-4 grid grid-cols-2 gap-3">
+      <div className="mt-4 flex flex-wrap justify-center gap-2 sm:gap-3">
         <Link
           to={linkTo}
-          className="inline-flex items-center justify-center h-10 rounded-md text-sm font-medium border border-[#ead9cf] text-[#a36f52] hover:border-[#c98963] hover:bg-orange-50 transition-colors duration-300"
+          className="inline-flex items-center justify-center h-10 px-4 sm:px-5 rounded-md text-sm font-medium border border-[#ead9cf] text-[#a36f52] hover:border-[#c98963] hover:bg-orange-50 transition-colors duration-300 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98963] focus-visible:ring-offset-2"
         >
           <span>Learn More</span>
         </Link>
         <button
           type="button"
           onClick={onBook}
-          className="inline-flex items-center justify-center h-10 rounded-md text-sm font-medium bg-[#c98963] hover:bg-[#be7f58] text-white transition-colors duration-300"
+          className="inline-flex items-center justify-center h-10 px-4 sm:px-5 rounded-md text-sm font-medium bg-[#c98963] hover:bg-[#be7f58] text-white transition-colors duration-300 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98963] focus-visible:ring-offset-2"
         >
           <span>Book Now</span>
         </button>
@@ -64,7 +64,7 @@ export default function OurService({ onBookAppointment }) {
         </div>
 
         {/* Grid dynamically from expanded services subset (ordered) */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
           {[
             "pigmentation-solutions",
             "skin-tightening",

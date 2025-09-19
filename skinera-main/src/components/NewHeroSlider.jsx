@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import imgClinic from "../../Images/clinic-images/clinic.webp";
 import imgThree from "../../Images/clinic-images/3.jpg";
+import hemoDermImg from "../../Images/newServicesComponent/Mesotherapy.jpg";
 import doctorImg from "../../Images/Doctor-img/1.jpeg";
 import heroReplace from "../../Images/misc/1.png";
 import heroTagline from "../../Images/misc/2.png";
@@ -38,6 +39,12 @@ const slides = [
     noCaption: true,
     noGradient: true,
   },
+  // 5) Hemopathy Dermatology slide
+  {
+    type: "image",
+    src: hemoDermImg,
+    alt: "Hemopathy Dermatology",
+  },
   // 5) Image with caption (replaced previous video)
   {
     type: "image",
@@ -48,9 +55,9 @@ const slides = [
 ];
 
 // Per-slide captions (same character counts as original)
-// Heading length: 30 chars, Paragraph length: 77 chars
+// Heading length: ~30 chars, Paragraph length: ~77 chars
 const captions = [
-  // For each slide above (indexes 0..4)
+  // For each slide above (indexes 0..5)
   {
     h: "Discover Aesthetic Skin & Glow",
     p: "Elevated care with personalised paths. Science-backed, softer, and efficient.",
@@ -58,6 +65,10 @@ const captions = [
   null, // Doctor slide uses custom overlay
   null, // Duplicate doctor slide also no caption
   null, // Static image with no caption
+  {
+    h: "Hemopathy Dermatology",
+    p: "Holistic care that aligns wellness with advanced skin treatments for lasting results.",
+  },
   {
     h: "Transform Your Hair, Transform Your Look",
     p: "Because silky, healthy hair never goes out of style.",
@@ -68,10 +79,11 @@ export default function NewHeroSlider({ onBookAppointment }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [fadeIn, setFadeIn] = useState(true);
   const timerRef = useRef(null);
   const videoRef = useRef(null);
   // Slide durations (ms)
-  const IMAGE_DURATION = 4000; // 4s
+  const IMAGE_DURATION = 6000; // 6s (slower for smoother viewing)
   const VIDEO_DURATION = 7000; // 7s
   // Inline call-back mini form (slide 1) state and config
   const FORM_ACTION = "https://formsubmit.co/kunalking01grd@gmail.com";
@@ -102,6 +114,13 @@ export default function NewHeroSlider({ onBookAppointment }) {
       return () => mq.removeListener(handler);
     }
   }, []);
+
+  // Trigger fade-in on slide change for smoother transitions
+  useEffect(() => {
+    setFadeIn(false);
+    const id = requestAnimationFrame(() => setFadeIn(true));
+    return () => cancelAnimationFrame(id);
+  }, [index]);
 
   // Advance helpers
   const goNext = () => setIndex((i) => (i + 1) % slides.length);
@@ -198,8 +217,12 @@ export default function NewHeroSlider({ onBookAppointment }) {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Full-bleed media background */}
-      <div className="absolute inset-0 z-0">
+      {/* Full-bleed media background with fade-in transition */}
+      <div
+        className={`absolute inset-0 z-0 transition-opacity duration-700 ${
+          fadeIn ? "opacity-100" : "opacity-0"
+        }`}
+      >
         {current.type === "image" ? (
           <img
             src={

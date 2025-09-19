@@ -67,7 +67,19 @@ export const hairMenu = [
   },
   { label: "Alopecia Areata", href: "/service/hair-gfc" },
   { label: "Dandruff", href: "/service/dandruff" },
-  { label: "Hair Transplant", href: "/service/hair-transplant" },
+  // { label: "Hair Transplant", href: "/service/hair-transplant" },
+];
+
+export const hemopathicMenu = [
+  { label: "Skin Allergy", href: "/service/skin-allergy" },
+  { label: "Psoriasis", href: "/service/psoriasis" },
+  { label: "Eczema", href: "/service/eczema" },
+  { label: "Scales", href: "/service/scales" },
+  { label: "Urticaria", href: "/service/urticaria" },
+  { label: "Fungal", href: "/service/fungal" },
+  { label: "Scabies", href: "/service/scabies" },
+  { label: "Vitiligo White Spot", href: "/service/vitiligo-white-spot" },
+  { label: "Alopecia Areata", href: "/service/alopecia-areata" },
 ];
 
 // Utility to get nested items for a given label

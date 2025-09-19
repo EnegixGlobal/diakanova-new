@@ -2,7 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-import footerLogo from "../../Images/Footer/footer-logo.png";
+// import footerLogo from "../../Images/Footer/footer-logo.png";
+import footerLogo from "../../public/logo.png"
 import rightFlower from "../../Images/Footer/right-flower.png";
 import {
   faLocationDot,

@@ -14,6 +14,14 @@ import imgLaserHairRemoval from "../../Images/newServicesComponent/Laser-hair-re
 import imgLaserSkinTherapy from "../../Images/newServicesComponent/Laser-skin-therapy.jpg";
 import imgMesotherapy from "../../Images/newServicesComponent/Mesotherapy.jpg";
 import imgMicrodermabrasion from "../../Images/newServicesComponent/Microdermabrasion.jpg";
+import imgSkinAllergy from "../../Images/hemopathic-img/skin-allergy.jpg";
+import imgPsoriasis from "../../Images/hemopathic-img/psoriasis.jpg";
+import imgEczema from "../../Images/hemopathic-img/eczema.jpg";
+import imgUrticaria from "../../Images/hemopathic-img/urticaria.jpg";
+import imgFungal from "../../Images/hemopathic-img/fungal.jpg";
+import imgScabies from "../../Images/hemopathic-img/scabies.jpg";
+import imgVitiligo from "../../Images/hemopathic-img/vitiligo-white-spot.jpg";
+import imgAlopecia from "../../Images/hemopathic-img/alopecia-areata.jpg";
 export const servicesExpanded = [
   {
     id: "pigmentation-solutions",
@@ -51,7 +59,7 @@ export const servicesExpanded = [
   },
   {
     id: "hair-prp",
-    title: "Hair PRP",
+    title: "Hair PRP/GFC",
     short: "Concentrated platelet growth factors to revive follicles.",
     overview: {
       title: "Autologous PRP Therapy",
@@ -61,18 +69,18 @@ export const servicesExpanded = [
     included: ["PRP preparation", "Scalp application"],
     excluded: ["Hair transplant"],
   },
-  {
-    id: "hair-gfc",
-    title: "HAIR GFC",
-    short: "Growth Factor Concentrate for amplified follicle stimulation.",
-    overview: {
-      title: "High-Purity GFC Infusion",
-      description: "Refined growth factors in a controlled protocol.",
-    },
-    image: imgHairGFC,
-    included: ["GFC kit", "Sterile application"],
-    excluded: ["PRP (separate)"],
-  },
+  // {
+  //   id: "hair-gfc",
+  //   title: "HAIR GFC",
+  //   short: "Growth Factor Concentrate for amplified follicle stimulation.",
+  //   overview: {
+  //     title: "High-Purity GFC Infusion",
+  //     description: "Refined growth factors in a controlled protocol.",
+  //   },
+  //   image: imgHairGFC,
+  //   included: ["GFC kit", "Sterile application"],
+  //   excluded: ["PRP (separate)"],
+  // },
   {
     id: "hair-regrowth-laser",
     title: "Hair Regrowth Laser",
@@ -99,19 +107,19 @@ export const servicesExpanded = [
     included: ["Cleansing phases", "Essence infusion"],
     excluded: ["Injectables"],
   },
-  {
-    id: "botox-treatment",
-    title: "Botox Treatment",
-    short:
-      "Precision neuromodulator application for expression line softening.",
-    overview: {
-      title: "Targeted Dynamic Line Relaxation",
-      description: "Focused units for natural, refreshed appearance.",
-    },
-    image: imgBotox,
-    included: ["Assessment", "Unit mapping"],
-    excluded: ["Dermal fillers"],
-  },
+  // {
+  //   id: "botox-treatment",
+  //   title: "Botox Treatment",
+  //   short:
+  //     "Precision neuromodulator application for expression line softening.",
+  //   overview: {
+  //     title: "Targeted Dynamic Line Relaxation",
+  //     description: "Focused units for natural, refreshed appearance.",
+  //   },
+  //   image: imgBotox,
+  //   included: ["Assessment", "Unit mapping"],
+  //   excluded: ["Dermal fillers"],
+  // },
   {
     id: "anti-aging-solutions",
     title: "Anti-aging Solutions",
@@ -198,6 +206,114 @@ export const servicesExpanded = [
     image: imgMicrodermabrasion,
     included: ["Exfoliation pass"],
     excluded: ["Chemical peel"],
+  },
+  {
+    id: "skin-allergy",
+    title: "Skin Allergy Treatment",
+    short: "Comprehensive care for allergic skin reactions and sensitivities.",
+    overview: {
+      title: "Allergic Skin Reaction Management",
+      description: "Diagnosis and treatment of various skin allergies including contact dermatitis, atopic dermatitis, and other allergic manifestations.",
+    },
+    image: imgSkinAllergy,
+    included: ["Allergy assessment", "Topical treatments", "Lifestyle guidance"],
+    excluded: ["Systemic medications"],
+  },
+  {
+    id: "psoriasis",
+    title: "Psoriasis Treatment",
+    short: "Advanced therapies for psoriasis management and symptom relief.",
+    overview: {
+      title: "Psoriasis Care Protocol",
+      description: "Comprehensive treatment approaches for psoriasis including topical therapies, light therapy, and supportive care for symptom management.",
+    },
+    image: imgPsoriasis,
+    included: ["Skin assessment", "Treatment planning", "Follow-up care"],
+    excluded: ["Systemic immunosuppressants"],
+  },
+  {
+    id: "eczema",
+    title: "Eczema Treatment",
+    short: "Gentle care for eczema-prone skin to reduce inflammation and itching.",
+    overview: {
+      title: "Eczema Management",
+      description: "Specialized protocols for eczema treatment focusing on barrier repair, anti-inflammatory therapies, and moisturization strategies.",
+    },
+    image: imgEczema,
+    included: ["Skin evaluation", "Barrier repair treatments", "Moisturizing regimen"],
+    excluded: ["Steroid prescriptions"],
+  },
+  {
+    id: "scales",
+    title: "Scales Treatment",
+    short: "Treatment for scaly skin conditions and exfoliation disorders.",
+    overview: {
+      title: "Scaly Skin Condition Care",
+      description: "Targeted treatments for various scaling skin conditions including ichthyosis, xerosis, and other exfoliative disorders.",
+    },
+    image: imgDeepPeelings, // placeholder - no specific image
+    included: ["Scalp/skin assessment", "Exfoliation therapy", "Hydration protocols"],
+    excluded: ["Internal medications"],
+  },
+  {
+    id: "urticaria",
+    title: "Urticaria Treatment",
+    short: "Management of hives and urticaria with anti-inflammatory approaches.",
+    overview: {
+      title: "Hives and Urticaria Care",
+      description: "Comprehensive treatment for acute and chronic urticaria focusing on trigger identification and symptomatic relief.",
+    },
+    image: imgUrticaria,
+    included: ["Trigger assessment", "Anti-inflammatory treatments", "Preventive measures"],
+    excluded: ["Emergency epinephrine"],
+  },
+  {
+    id: "fungal",
+    title: "Fungal Infection Treatment",
+    short: "Effective treatment for various fungal skin infections.",
+    overview: {
+      title: "Antifungal Therapy",
+      description: "Targeted treatment protocols for fungal infections including ringworm, athlete's foot, and other mycotic skin conditions.",
+    },
+    image: imgFungal,
+    included: ["Fungal culture/diagnosis", "Antifungal treatments", "Prevention guidance"],
+    excluded: ["Oral antifungals"],
+  },
+  {
+    id: "scabies",
+    title: "Scabies Treatment",
+    short: "Comprehensive treatment for scabies infestation and prevention.",
+    overview: {
+      title: "Scabies Eradication Protocol",
+      description: "Complete treatment approach for scabies including topical therapies, environmental decontamination, and family treatment.",
+    },
+    image: imgScabies,
+    included: ["Diagnosis confirmation", "Topical treatment", "Environmental cleaning"],
+    excluded: ["Oral medications"],
+  },
+  {
+    id: "vitiligo-white-spot",
+    title: "Vitiligo White Spot Treatment",
+    short: "Repigmentation therapies for vitiligo and leukoderma.",
+    overview: {
+      title: "Vitiligo Management",
+      description: "Advanced treatment options for vitiligo including phototherapy, topical treatments, and repigmentation strategies.",
+    },
+    image: imgVitiligo,
+    included: ["Skin evaluation", "Phototherapy sessions", "Topical treatments"],
+    excluded: ["Surgical interventions"],
+  },
+  {
+    id: "alopecia-areata",
+    title: "Alopecia Areata Treatment",
+    short: "Treatment for autoimmune hair loss conditions.",
+    overview: {
+      title: "Autoimmune Hair Loss Care",
+      description: "Comprehensive approach to alopecia areata treatment including topical therapies, injections, and supportive care.",
+    },
+    image: imgAlopecia,
+    included: ["Scalp assessment", "Treatment planning", "Progress monitoring"],
+    excluded: ["Systemic immunosuppressants"],
   },
 ];
 

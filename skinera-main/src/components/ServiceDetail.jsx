@@ -9,7 +9,6 @@ import { getExpandedService } from "../data/servicesExpanded";
 import bgFlower from "../../Images/Our-Service/bg-Flower-png-Use-It-InLargeWidth.png";
 import ServiceExtras from "./ServiceExtras.jsx";
 import ClientFaq from "./ClientFaq.jsx";
-import OurService from "./OurService.jsx";
 
 export default function ServiceDetail({ serviceId }) {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -161,8 +160,7 @@ export default function ServiceDetail({ serviceId }) {
       {/* Client FAQ accordion */}
       <ClientFaq />
 
-      {/* Related services */}
-      <OurService onBookAppointment={openAppointment} />
+  {/* Related services intentionally hidden on detail page to avoid duplication */}
 
       <Footer />
 
