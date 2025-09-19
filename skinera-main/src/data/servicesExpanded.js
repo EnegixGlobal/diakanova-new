@@ -22,6 +22,12 @@ import imgFungal from "../../Images/hemopathic-img/fungal.jpg";
 import imgScabies from "../../Images/hemopathic-img/scabies.jpg";
 import imgVitiligo from "../../Images/hemopathic-img/vitiligo-white-spot.jpg";
 import imgAlopecia from "../../Images/hemopathic-img/alopecia-areata.jpg";
+// Additional imports for new services
+import imgKoreanFacial from "../../Images/newServicesComponent/Facials.jpg"; // Placeholder for Korean Facial
+import imgVampireFacial from "../../Images/newServicesComponent/Anti-aging-solutions.jpg"; // Placeholder for Vampire Facial
+import imgSRF from "../../Images/newServicesComponent/Laser-skin-therapy.jpg"; // Placeholder for SRF
+import imgHydrafacial from "../../Images/newServicesComponent/Facials.jpg"; // Placeholder for Hydrafacial
+// imgMicrodermabrasion already imported
 export const servicesExpanded = [
   {
     id: "pigmentation-solutions",
@@ -314,6 +320,78 @@ export const servicesExpanded = [
     image: imgAlopecia,
     included: ["Scalp assessment", "Treatment planning", "Progress monitoring"],
     excluded: ["Systemic immunosuppressants"],
+  },
+  {
+    id: "korean-facial",
+    title: "Korean Facial",
+    short: "Rejuvenating facial treatment inspired by Korean skincare routines.",
+    overview: {
+      title: "Korean Skincare Facial",
+      description: "A multi-step facial treatment incorporating hydrating masks, exfoliation, and nourishing serums for glowing skin.",
+    },
+    image: imgKoreanFacial,
+    included: ["Deep cleansing", "Exfoliation", "Hydrating mask", "Serum application"],
+    excluded: ["Chemical peels"],
+  },
+  {
+    id: "vampire-facial",
+    title: "Vampire Facial",
+    short: "Platelet-rich plasma facial for skin rejuvenation.",
+    overview: {
+      title: "PRP Facial Therapy",
+      description: "Utilizing your own platelet-rich plasma to stimulate collagen production and improve skin texture and tone.",
+    },
+    image: imgVampireFacial,
+    included: ["Blood draw", "PRP preparation", "Facial application", "Post-care instructions"],
+    excluded: ["Fillers or Botox"],
+  },
+  {
+    id: "srf",
+    title: "SRF Treatment",
+    short: "Skin Rejuvenation Facial for anti-aging benefits.",
+    overview: {
+      title: "Advanced Skin Rejuvenation",
+      description: "Non-invasive treatment combining microdermabrasion, chemical exfoliation, and LED therapy for youthful skin.",
+    },
+    image: imgSRF,
+    included: ["Microdermabrasion", "Chemical exfoliation", "LED therapy", "Moisturizing treatment"],
+    excluded: ["Laser treatments"],
+  },
+  {
+    id: "hydrafacial",
+    title: "Hydrafacial",
+    short: "Hydrating facial treatment for deep cleansing and nourishment.",
+    overview: {
+      title: "HydraFacial Therapy",
+      description: "A multi-step facial that cleanses, exfoliates, and hydrates the skin using a patented vortex technology for a refreshed complexion.",
+    },
+    image: imgHydrafacial,
+    included: ["Deep cleansing", "Exfoliation", "Hydration infusion", "Antioxidant protection"],
+    excluded: ["Chemical peels"],
+  },
+  {
+    id: "microdermabrasion",
+    title: "Microdermabrasion",
+    short: "Gentle exfoliation to improve skin texture and tone.",
+    overview: {
+      title: "Microdermabrasion Treatment",
+      description: "Non-invasive procedure that uses fine crystals to exfoliate the skin, reducing fine lines, acne scars, and improving overall skin texture.",
+    },
+    image: imgMicrodermabrasion,
+    included: ["Skin assessment", "Exfoliation treatment", "Moisturizing mask", "Sun protection advice"],
+    excluded: ["Deep chemical peels"],
+  },
+  {
+    id: "hair-gfc-therapy",
+    title: "Hair GFC Therapy",
+    short: "Growth Factor Concentrate therapy for hair restoration.",
+    overview: {
+      title: "Hair GFC Treatment",
+      description: "Advanced therapy using growth factor concentrates to stimulate hair follicles, promote hair growth, and improve scalp health.",
+    },
+    image: imgHairGFC,
+    included: ["Scalp analysis", "GFC application", "Post-treatment care", "Progress monitoring"],
+    excluded: ["Surgical hair transplants"],
   },
 ];
 

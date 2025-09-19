@@ -3,7 +3,15 @@
 
 export const skinMenu = [
   { label: "Acne Scar", href: "/service/laser-skin-therapy" },
-  { label: "Anti Aging", href: "/service/anti-aging" },
+  {
+    label: "Anti Aging",
+    href: "/service/anti-aging",
+    children: [
+      { label: "Korean Facial", href: "/service/korean-facial" },
+      { label: "Vampire Facial", href: "/service/vampire-facial" },
+      { label: "SRF", href: "/service/srf" },
+    ],
+  },
   {
     label: "Skin Lightening & Whitening",
     href: "/service/skin-lightening-and-whitening",
@@ -28,6 +36,9 @@ export const skinMenu = [
       { label: "Oxygeneo Facial", href: "/service/oxygeneo-facial" },
       { label: "Carbon Facial", href: "/service/carbon-facial" },
       { label: "Photo Facial", href: "/service/photo-facial" },
+      { label: "Korean Facial", href: "/service/korean-facial" },
+      { label: "Hydrafacial", href: "/service/hydrafacial" },
+      { label: "Microdermabrasion", href: "/service/microdermabrasion" },
     ],
   },
   { label: "Botox & Fillers", href: "/service/botox-treatment" },
@@ -46,11 +57,18 @@ export const skinNested = {
       { label: "Erbium Fiber Laser", href: "/service/erbium-fiber-laser" },
     ],
   },
+  "Anti Aging": {
+    children: [
+      { label: "Korean Facial", href: "/service/korean-facial" },
+      { label: "Vampire Facial", href: "/service/vampire-facial" },
+      { label: "SRF", href: "/service/srf" },
+    ],
+  },
 };
 
 export const hairMenu = [
   {
-    label: "Hairfall",
+    label: "Hairfall / Hair Thininig",
     href: "/service/hairfall",
     children: [
       {
@@ -63,6 +81,7 @@ export const hairMenu = [
         label: "Low Light Laser Therapy",
         href: "/service/hair-regrowth-laser",
       },
+      { label: "Hair GFC Therapy", href: "/service/hair-gfc-therapy" },
     ],
   },
   { label: "Alopecia Areata", href: "/service/hair-gfc" },
