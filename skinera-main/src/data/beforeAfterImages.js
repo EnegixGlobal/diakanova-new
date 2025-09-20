@@ -22,8 +22,6 @@ const microdermabrasion = deepPeel; // placeholder
 
 // Service ID to image mapping (keys correspond to service IDs used in menu/routes)
 export const beforeAfterImages = {
-  // Primary anti-aging slug (older) and expanded service slug
-  "anti-aging": antiAging,
   "anti-aging-solutions": antiAging,
   "botox-treatment": botox,
   facials: facial,
@@ -31,7 +29,6 @@ export const beforeAfterImages = {
   "hair-gfc-therapy": hairGfc,
   regrowth: hairRegrowthLaser,
   "hair-regrowth-laser": hairRegrowthLaser,
-  "korean-facial": korean,
   "korean-skin-treatment": korean,
   "deep-peelings": deepPeel,
   "chemical-peel": deepPeel,
@@ -43,27 +40,8 @@ export const beforeAfterImages = {
   "laser-skin-therapy": laserSkinTherapy,
   mesotherapy: mesotherapy,
   microdermabrasion: microdermabrasion,
-  // Additional acne / rejuvenation service aliases
-  "micro-needling-prp": facial,
-  mnrf: facial,
-  hydrafacial: facial,
-  srf: facial,
-  "vampire-facial": facial,
 };
 
 export function getBeforeAfterImage(id) {
-  if (!id) return undefined;
-  if (beforeAfterImages[id]) return beforeAfterImages[id];
-  // Fallback heuristic: try stripping common suffixes / plurals
-  const variants = [];
-  if (id.endsWith("-solutions")) variants.push(id.replace(/-solutions$/, ""));
-  if (id.endsWith("-treatment")) variants.push(id.replace(/-treatment$/, ""));
-  if (id.endsWith("-treatments")) variants.push(id.replace(/-treatments$/, ""));
-  if (id.endsWith("-therapy")) variants.push(id.replace(/-therapy$/, ""));
-  // singular/plural basic
-  if (id.endsWith("s")) variants.push(id.slice(0, -1));
-  for (const v of variants) {
-    if (beforeAfterImages[v]) return beforeAfterImages[v];
-  }
-  return undefined;
+  return beforeAfterImages[id];
 }

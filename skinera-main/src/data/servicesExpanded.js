@@ -1,17 +1,19 @@
 // Expanded services mock data
 // Service-specific images
-// Removed legacy service images now replaced by curated set
-// New curated images (Service-Images-new)
-import newAntiAging from "../../Images/Service-Images-new/Anti-aging.jpg";
-import newDeepPeelings from "../../Images/Service-Images-new/Deep Peelings.jpg";
-import newFacials from "../../Images/Service-Images-new/facials.jpg";
-import newHairPrp from "../../Images/Service-Images-new/hair prp.jpg";
-import newHairRegrowthLaser from "../../Images/Service-Images-new/hair regrowth laser.jpg";
-import newKoreanSkin from "../../Images/Service-Images-new/Korean Skin Treatment.jpg";
-import newPigmentation from "../../Images/Service-Images-new/pigmentation.jpg";
-import newPsoriasis from "../../Images/Service-Images-new/psoriasis.jpg";
-import newSkinTightening from "../../Images/Service-Images-new/skin tightening.jpg";
-import newTineaInfection from "../../Images/Service-Images-new/tinea infection.jpg"; // placeholder for fungal / tinea related
+import imgPigmentation from "../../Images/Service-Images-new/Pigmentation.jpg";
+import imgSkinTightening from "../../Images/Service-Images-new/Skin-tightening.jpg";
+import imgHairPRP from "../../Images/Service-Images-new/hair-prp.jpg";
+import imgHairGFC from "../../Images/newServicesComponent/HAIR-GFC.webp";
+import imgHairRegrowthLaser from "../../Images/Service-Images-new/Hair-regrowth-laser.jpg";
+import imgKoreanSkin from "../../Images/Service-Images-new/Korean-skin-treatment.jpg";
+import imgBotox from "../../Images/newServicesComponent/BotoxTreatment.avif";
+import imgAntiAging from "../../Images/Service-Images-new/Anti-aging.jpg";
+import imgDeepPeelings from "../../Images/Service-Images-new/Deep-Peelings.jpg";
+import imgFacials from "../../Images/newServicesComponent/Facials.jpg";
+import imgLaserHairRemoval from "../../Images/newServicesComponent/Laser-hair-removal.jpg";
+import imgLaserSkinTherapy from "../../Images/newServicesComponent/Laser-skin-therapy.jpg";
+import imgMesotherapy from "../../Images/newServicesComponent/Mesotherapy.jpg";
+import imgMicrodermabrasion from "../../Images/newServicesComponent/Microdermabrasion.jpg";
 import imgSkinAllergy from "../../Images/hemopathic-img/skin-allergy.jpg";
 import imgPsoriasis from "../../Images/hemopathic-img/psoriasis.jpg";
 import imgEczema from "../../Images/hemopathic-img/eczema.jpg";
@@ -21,11 +23,15 @@ import imgScabies from "../../Images/hemopathic-img/scabies.jpg";
 import imgVitiligo from "../../Images/hemopathic-img/vitiligo-white-spot.jpg";
 import imgAlopecia from "../../Images/hemopathic-img/alopecia-areata.jpg";
 // Additional imports for new services
-// Legacy placeholder imports removed (korean facial, vampire facial, srf, hydrafacial)
+import imgKoreanFacial from "../../Images/newServicesComponent/Facials.jpg"; // Placeholder for Korean Facial
+import imgVampireFacial from "../../Images/newServicesComponent/Anti-aging-solutions.jpg"; // Placeholder for Vampire Facial
+import imgSRF from "../../Images/newServicesComponent/Laser-skin-therapy.jpg"; // Placeholder for SRF
+import imgHydrafacial from "../../Images/newServicesComponent/Facials.jpg"; // Placeholder for Hydrafacial
+// imgMicrodermabrasion already imported
 export const servicesExpanded = [
   {
     id: "pigmentation-solutions",
-    title: "Pigmentation Solutions",
+    title: "Pigmentation",
     short:
       "Target uneven tone and dark spots with advanced corrective protocols.",
     overview: {
@@ -33,7 +39,7 @@ export const servicesExpanded = [
       description:
         "Our pigmentation solutions combine dermaceutic actives, controlled exfoliation, and targeted device-based approaches to gradually even skin tone while safeguarding barrier health.\n\nProtocols are customised after in-depth assessment and may include brightening peels, melanin-inhibiting serums, low-energy laser toning, and supportive home care.",
     },
-  image: newPigmentation,
+    image: imgPigmentation,
     included: [
       "Assessment & Wood lamp check",
       "Customized peel/laser plan",
@@ -53,7 +59,7 @@ export const servicesExpanded = [
       description:
         "Energy-based modalities and bio‑stimulatory actives are layered strategically to support dermal density.",
     },
-  image: newSkinTightening,
+    image: imgSkinTightening,
     included: ["Consult & mapping", "Energy session", "After-care"],
     excluded: ["Invasive surgery"],
   },
@@ -65,7 +71,7 @@ export const servicesExpanded = [
       title: "Autologous PRP Therapy",
       description: "Platelet concentrate supports regeneration signalling.",
     },
-  image: newHairPrp,
+    image: imgHairPRP,
     included: ["PRP preparation", "Scalp application"],
     excluded: ["Hair transplant"],
   },
@@ -83,13 +89,13 @@ export const servicesExpanded = [
   // },
   {
     id: "hair-regrowth-laser",
-    title: "Hair Regrowth Laser",
+    title: "Hair Regrowth",
     short: "Low‑level laser therapy to energize dormant follicles.",
     overview: {
       title: "Photobiomodulation for Scalp Health",
       description: "LLLT improves cellular respiration and micro‑circulation.",
     },
-  image: newHairRegrowthLaser,
+    image: imgHairRegrowthLaser,
     included: ["Laser session", "Progress tracking"],
     excluded: ["Medication courses"],
   },
@@ -103,7 +109,7 @@ export const servicesExpanded = [
       description:
         "A multi‑phase protocol focusing on gentle resurfacing and deep moisture infusion.",
     },
-  image: newKoreanSkin,
+    image: imgKoreanSkin,
     included: ["Cleansing phases", "Essence infusion"],
     excluded: ["Injectables"],
   },
@@ -129,7 +135,7 @@ export const servicesExpanded = [
       title: "Age-Resilience Strategy",
       description: "Stacked modalities tailored to individual aging patterns.",
     },
-  image: newAntiAging,
+    image: imgAntiAging,
     included: ["Multi-modality plan"],
     excluded: ["Surgical lifting"],
   },
@@ -142,7 +148,7 @@ export const servicesExpanded = [
       description:
         "Applied by trained clinician with strict downtime guidance.",
     },
-  image: newDeepPeelings,
+    image: imgDeepPeelings,
     included: ["Peel application", "After-care kit"],
     excluded: ["Unrelated meds"],
   },
@@ -155,7 +161,7 @@ export const servicesExpanded = [
       description:
         "Each session adapts exfoliation, hydration, sculpting, and barrier repair.",
     },
-  image: newFacials,
+    image: imgFacials,
     included: ["Custom protocol"],
     excluded: ["Prescription meds"],
   },
@@ -167,7 +173,7 @@ export const servicesExpanded = [
       title: "Selective Follicular Photothermolysis",
       description: "Energy parameters aligned to skin type and hair calibre.",
     },
-  image: newSkinTightening, // placeholder (no dedicated laser hair removal image in new set)
+    image: imgLaserHairRemoval,
     included: ["Patch test", "Session plan"],
     excluded: ["Electrolysis"],
   },
@@ -179,7 +185,7 @@ export const servicesExpanded = [
       title: "Fractional & Toning Approaches",
       description: "Combines low‑fluence and fractional passes.",
     },
-    image: newAntiAging, // placeholder: legacy imgLaserSkinTherapy import removed with curated set
+    image: imgLaserSkinTherapy,
     included: ["Laser passes"],
     excluded: ["Peels (separate)"],
   },
@@ -191,7 +197,7 @@ export const servicesExpanded = [
       title: "Multi‑Micro Infusion",
       description: "Fine delivery of vitamins, peptides, and boosters.",
     },
-  image: newFacials, // placeholder (no mesotherapy specific image provided)
+    image: imgMesotherapy,
     included: ["Sterile actives"],
     excluded: ["PRP kit"],
   },
@@ -203,7 +209,7 @@ export const servicesExpanded = [
       title: "Crystal / Diamond Precision Resurfacing",
       description: "Gentle epidermal renewal stimulating turnover.",
     },
-  image: newFacials, // placeholder (no microdermabrasion specific image provided)
+    image: imgMicrodermabrasion,
     included: ["Exfoliation pass"],
     excluded: ["Chemical peel"],
   },
@@ -227,7 +233,7 @@ export const servicesExpanded = [
       title: "Psoriasis Care Protocol",
       description: "Comprehensive treatment approaches for psoriasis including topical therapies, light therapy, and supportive care for symptom management.",
     },
-  image: newPsoriasis,
+    image: imgPsoriasis,
     included: ["Skin assessment", "Treatment planning", "Follow-up care"],
     excluded: ["Systemic immunosuppressants"],
   },
@@ -239,7 +245,7 @@ export const servicesExpanded = [
       title: "Eczema Management",
       description: "Specialized protocols for eczema treatment focusing on barrier repair, anti-inflammatory therapies, and moisturization strategies.",
     },
-  image: newFacials, // placeholder (eczema specific image not in new set)
+    image: imgEczema,
     included: ["Skin evaluation", "Barrier repair treatments", "Moisturizing regimen"],
     excluded: ["Steroid prescriptions"],
   },
@@ -251,7 +257,7 @@ export const servicesExpanded = [
       title: "Scaly Skin Condition Care",
       description: "Targeted treatments for various scaling skin conditions including ichthyosis, xerosis, and other exfoliative disorders.",
     },
-  image: newDeepPeelings, // placeholder: no dedicated 'scales' image in curated set (pending asset; legacy variable removed)
+    image: imgDeepPeelings, // placeholder - no specific image
     included: ["Scalp/skin assessment", "Exfoliation therapy", "Hydration protocols"],
     excluded: ["Internal medications"],
   },
@@ -263,7 +269,7 @@ export const servicesExpanded = [
       title: "Hives and Urticaria Care",
       description: "Comprehensive treatment for acute and chronic urticaria focusing on trigger identification and symptomatic relief.",
     },
-  image: newFacials, // placeholder (urticaria image missing in new set)
+    image: imgUrticaria,
     included: ["Trigger assessment", "Anti-inflammatory treatments", "Preventive measures"],
     excluded: ["Emergency epinephrine"],
   },
@@ -275,7 +281,7 @@ export const servicesExpanded = [
       title: "Antifungal Therapy",
       description: "Targeted treatment protocols for fungal infections including ringworm, athlete's foot, and other mycotic skin conditions.",
     },
-  image: newTineaInfection,
+    image: imgFungal,
     included: ["Fungal culture/diagnosis", "Antifungal treatments", "Prevention guidance"],
     excluded: ["Oral antifungals"],
   },
@@ -287,7 +293,7 @@ export const servicesExpanded = [
       title: "Scabies Eradication Protocol",
       description: "Complete treatment approach for scabies including topical therapies, environmental decontamination, and family treatment.",
     },
-  image: newTineaInfection, // placeholder (scabies image missing)
+    image: imgScabies,
     included: ["Diagnosis confirmation", "Topical treatment", "Environmental cleaning"],
     excluded: ["Oral medications"],
   },
@@ -299,7 +305,7 @@ export const servicesExpanded = [
       title: "Vitiligo Management",
       description: "Advanced treatment options for vitiligo including phototherapy, topical treatments, and repigmentation strategies.",
     },
-  image: newPigmentation, // placeholder (vitiligo not supplied; using pigmentation image)
+    image: imgVitiligo,
     included: ["Skin evaluation", "Phototherapy sessions", "Topical treatments"],
     excluded: ["Surgical interventions"],
   },
@@ -311,7 +317,7 @@ export const servicesExpanded = [
       title: "Autoimmune Hair Loss Care",
       description: "Comprehensive approach to alopecia areata treatment including topical therapies, injections, and supportive care.",
     },
-  image: newHairRegrowthLaser, // placeholder (alopecia specific not supplied)
+    image: imgAlopecia,
     included: ["Scalp assessment", "Treatment planning", "Progress monitoring"],
     excluded: ["Systemic immunosuppressants"],
   },
@@ -323,7 +329,7 @@ export const servicesExpanded = [
       title: "Korean Skincare Facial",
       description: "A multi-step facial treatment incorporating hydrating masks, exfoliation, and nourishing serums for glowing skin.",
     },
-  image: newKoreanSkin,
+    image: imgKoreanFacial,
     included: ["Deep cleansing", "Exfoliation", "Hydrating mask", "Serum application"],
     excluded: ["Chemical peels"],
   },
@@ -335,7 +341,7 @@ export const servicesExpanded = [
       title: "PRP Facial Therapy",
       description: "Utilizing your own platelet-rich plasma to stimulate collagen production and improve skin texture and tone.",
     },
-  image: newAntiAging, // placeholder (vampire facial not supplied)
+    image: imgVampireFacial,
     included: ["Blood draw", "PRP preparation", "Facial application", "Post-care instructions"],
     excluded: ["Fillers or Botox"],
   },
@@ -347,7 +353,7 @@ export const servicesExpanded = [
       title: "Advanced Skin Rejuvenation",
       description: "Non-invasive treatment combining microdermabrasion, chemical exfoliation, and LED therapy for youthful skin.",
     },
-  image: newAntiAging, // placeholder (SRF not supplied)
+    image: imgSRF,
     included: ["Microdermabrasion", "Chemical exfoliation", "LED therapy", "Moisturizing treatment"],
     excluded: ["Laser treatments"],
   },
@@ -359,7 +365,7 @@ export const servicesExpanded = [
       title: "HydraFacial Therapy",
       description: "A multi-step facial that cleanses, exfoliates, and hydrates the skin using a patented vortex technology for a refreshed complexion.",
     },
-  image: newFacials, // placeholder (hydrafacial not supplied separately)
+    image: imgHydrafacial,
     included: ["Deep cleansing", "Exfoliation", "Hydration infusion", "Antioxidant protection"],
     excluded: ["Chemical peels"],
   },
@@ -371,7 +377,7 @@ export const servicesExpanded = [
       title: "Microdermabrasion Treatment",
       description: "Non-invasive procedure that uses fine crystals to exfoliate the skin, reducing fine lines, acne scars, and improving overall skin texture.",
     },
-  image: newFacials,
+    image: imgMicrodermabrasion,
     included: ["Skin assessment", "Exfoliation treatment", "Moisturizing mask", "Sun protection advice"],
     excluded: ["Deep chemical peels"],
   },
@@ -383,7 +389,7 @@ export const servicesExpanded = [
       title: "Hair GFC Treatment",
       description: "Advanced therapy using growth factor concentrates to stimulate hair follicles, promote hair growth, and improve scalp health.",
     },
-  image: newHairPrp, // placeholder (hair GFC therapy shares hair PRP visual)
+    image: imgHairGFC,
     included: ["Scalp analysis", "GFC application", "Post-treatment care", "Progress monitoring"],
     excluded: ["Surgical hair transplants"],
   },
@@ -395,7 +401,7 @@ export const servicesExpanded = [
       title: "Hair Regrowth Treatments",
       description: "A range of therapies including PRP, laser treatments, and topical solutions to promote natural hair regrowth and prevent further loss.",
     },
-  image: newHairRegrowthLaser,
+    image: imgHairRegrowthLaser,
     included: ["Scalp consultation", "Regrowth treatment plan", "Follow-up sessions", "Home care advice"],
     excluded: ["Hair transplant surgery"],
   },
@@ -407,7 +413,7 @@ export const servicesExpanded = [
       title: "Micro Needling PRP Treatment",
       description: "Microneedling creates micro-injuries to stimulate collagen, enhanced with PRP for faster healing and better results in acne scar reduction.",
     },
-  image: newFacials, // placeholder for micro needling with prp (no direct image)
+    image: imgMesotherapy,
     included: ["Skin assessment", "Microneedling session", "PRP application", "Post-care instructions"],
     excluded: ["Laser treatments"],
   },
@@ -419,7 +425,7 @@ export const servicesExpanded = [
       title: "Microneedling RF Therapy",
       description: "Combines microneedling with radiofrequency energy to deliver heat to deeper skin layers, promoting collagen production and improving acne scars.",
     },
-  image: newAntiAging, // placeholder for MNRF
+    image: imgLaserSkinTherapy,
     included: ["Consultation", "RF microneedling session", "Cooling and soothing", "Recovery guidance"],
     excluded: ["Surgical procedures"],
   },
@@ -431,7 +437,7 @@ export const servicesExpanded = [
       title: "Chemical Peel for Acne Scars",
       description: "Application of chemical solutions to remove damaged skin layers, revealing smoother, healthier skin underneath and reducing scar appearance.",
     },
-  image: newDeepPeelings,
+    image: imgDeepPeelings,
     included: ["Skin type assessment", "Peel application", "Neutralization", "Aftercare products"],
     excluded: ["Deep laser resurfacing"],
   },
@@ -443,7 +449,7 @@ export const servicesExpanded = [
       title: "Laser Hair Removal Treatment",
       description: "Safe and effective laser technology targets hair follicles to reduce unwanted hair growth, providing long-lasting smooth skin.",
     },
-  image: newSkinTightening,
+    image: imgLaserHairRemoval,
     included: ["Consultation", "Laser sessions", "Skin cooling", "Post-treatment care"],
     excluded: ["Waxing or shaving immediately before"],
   },
@@ -452,38 +458,3 @@ export const servicesExpanded = [
 export function getExpandedService(id) {
   return servicesExpanded.find((s) => s.id === id);
 }
-
-/*
-Placeholder Image Mapping Notes:
-The curated folder `Images/Service-Images-new` currently includes:
-  - Anti-aging.jpg
-  - Deep Peelings.jpg
-  - facials.jpg
-  - hair prp.jpg
-  - hair regrowth laser.jpg
-  - Korean Skin Treatment.jpg
-  - pigmentation.jpg
-  - psoriasis.jpg
-  - skin tightening.jpg
-  - tinea infection.jpg
-
-Applied Mapping:
-  pigmentation-solutions -> pigmentation.jpg
-  skin-tightening -> skin tightening.jpg
-  hair-prp / hair-gfc-therapy -> hair prp.jpg (shared visual)
-  hair-regrowth-laser / regrowth -> hair regrowth laser.jpg
-  korean-skin-treatment / korean-facial -> Korean Skin Treatment.jpg
-  anti-aging-solutions / vampire-facial / srf -> Anti-aging.jpg (shared anti-aging category)
-  deep-peelings / chemical-peel -> Deep Peelings.jpg
-  facials / hydrafacial / microdermabrasion / mesotherapy / micro-needling-prp / mnrf -> facials.jpg (general facial placeholder; replace with specific assets when available)
-  laser-hair-removal -> skin tightening.jpg (temporary until dedicated laser hair removal image is added to new set)
-  laser-skin-therapy -> Anti-aging.jpg (temporary aesthetic match)
-  psoriasis -> psoriasis.jpg
-  fungal / scabies / tinea-related -> tinea infection.jpg
-  eczema / urticaria / vitiligo-white-spot -> pigmentation.jpg or facials.jpg proxies (see code for exact choices)
-  alopecia-areata -> hair regrowth laser.jpg
-
-Next Steps (if assets provided later):
-  - Add distinct images for hydrafacial, microdermabrasion, mesotherapy, vampire-facial, srf, laser-hair-removal, eczema, urticaria, vitiligo, alopecia, scabies, fungal.
-  - Replace placeholder assignments in this file and update any related marketing copy if imagery changes category emphasis.
-*/
