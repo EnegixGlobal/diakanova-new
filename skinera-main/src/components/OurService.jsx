@@ -13,11 +13,11 @@ const Card = ({ img, title, onBook, linkTo = "/service/anti-aging" }) => (
       alt={title}
       className="w-full h-64 sm:h-72 md:h-80 object-cover shadow-md"
     />
-    <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 bg-white shadow-[0_10px_20px_rgba(0,0,0,0.12)] px-6 sm:px-8 py-4 w-[86%] sm:w-[78%] text-center">
-      <h3 className="font-domine text-[#b37556] text-base sm:text-lg font-medium leading-snug whitespace-normal break-words [hyphens:auto]">
+    <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 bg-white shadow-[0_10px_20px_rgba(0,0,0,0.12)] px-6 sm:px-8 pt-4 pb-5 w-[86%] sm:w-[78%] text-center flex flex-col items-center justify-between min-h-[170px]">
+      <h3 className="font-domine text-[#b37556] text-base sm:text-lg font-medium leading-snug whitespace-normal break-words [hyphens:auto] flex items-center justify-center min-h-[54px]">
         {title}
       </h3>
-      <div className="mt-4 flex flex-wrap justify-center gap-2 sm:gap-3">
+      <div className="mt-2 w-full flex flex-wrap justify-center gap-2 sm:gap-3">
         <Link
           to={linkTo}
           className="inline-flex items-center justify-center h-10 px-4 sm:px-5 rounded-md text-sm font-medium border border-[#ead9cf] text-[#a36f52] hover:border-[#c98963] hover:bg-orange-50 transition-colors duration-300 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98963] focus-visible:ring-offset-2"
