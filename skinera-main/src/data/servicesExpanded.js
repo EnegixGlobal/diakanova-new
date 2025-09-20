@@ -5,7 +5,7 @@ import imgPigmentation from "../../Images/Service-Images-new/pigmentation.jpg";
 import imgSkinTightening from "../../Images/Service-Images-new/skin-tightening.jpg";
 import imgHairPRP from "../../Images/Service-Images-new/hair-prp.jpg";
 import imgHairGFC from "../../Images/newServicesComponent/HAIR-GFC.webp";
-import imgHairRegrowthLaser from "../../Images/Service-Images-new/Hair-regrowth-laser.jpg";
+import imgHairRegrowthLaser from "../../Images/Service-Images-new/hair-regrowth-laser.jpg";
 import imgKoreanSkin from "../../Images/Service-Images-new/korean-skin-Treatment.jpg";
 import imgBotox from "../../Images/newServicesComponent/BotoxTreatment.avif";
 import imgAntiAging from "../../Images/Service-Images-new/Anti-aging.jpg";
