@@ -9,6 +9,7 @@ import { getExpandedService } from "../data/servicesExpanded";
 import bgFlower from "../../Images/Our-Service/bg-Flower-png-Use-It-InLargeWidth.png";
 import ServiceExtras from "./ServiceExtras.jsx";
 import ClientFaq from "./ClientFaq.jsx";
+import { getBeforeAfterImage } from "../data/beforeAfterImages";
 
 export default function ServiceDetail({ serviceId }) {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -35,6 +36,8 @@ export default function ServiceDetail({ serviceId }) {
     setIsVideoPlaying(true);
     console.log("Playing video for:", service.title);
   };
+
+  const beforeAfterImg = getBeforeAfterImage(effectiveId);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50">
@@ -156,6 +159,50 @@ export default function ServiceDetail({ serviceId }) {
 
       {/* Extras (compact features) - inserted after service detail */}
       <ServiceExtras />
+
+      {/* Before & After Section */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-domine font-medium text-[#b37556] text-center mb-8">
+              Before & After Results
+            </h2>
+            <div className="flex flex-col lg:flex-row gap-8 items-center">
+              {/* Image Section */}
+              <div className="w-full lg:w-1/2">
+                <div className="relative overflow-hidden rounded-lg shadow-lg">
+                  <img
+                    src={beforeAfterImg || service.image}
+                    alt={`${service.title} Before & After`}
+                    className="w-full h-[300px] sm:h-[400px] object-cover"
+                  />
+                </div>
+              </div>
+              {/* Content Section */}
+              <div className="w-full lg:w-1/2 space-y-4">
+                <h3 className="text-xl font-domine font-medium text-[#b37556]">
+                  Transform Your Skin with {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Our {service.title} treatment delivers remarkable results. See how our advanced techniques can rejuvenate your skin, reduce imperfections, and restore your natural glow. Each session is tailored to your unique skin needs for optimal outcomes.
+                </p>
+                <div className="space-y-2">
+                  <p className="text-gray-700 font-medium">Key Benefits:</p>
+                  <ul className="list-disc list-inside text-gray-600 space-y-1">
+                    <li>Visible improvement in skin texture and tone</li>
+                    <li>Reduction in fine lines and wrinkles</li>
+                    <li>Enhanced collagen production</li>
+                    <li>Long-lasting results with proper care</li>
+                  </ul>
+                </div>
+                <p className="text-gray-600 italic">
+                  Results may vary based on individual skin conditions and treatment adherence.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Client FAQ accordion */}
       <ClientFaq />

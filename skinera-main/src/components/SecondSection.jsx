@@ -36,10 +36,14 @@ export default function SecondSection({ onBookAppointment }) {
 
           {/* Center text + action boxes at large screens */}
           <div className="hidden lg:flex lg:col-span-4 lg:row-start-1 lg:col-start-5 lg:row-span-2 flex-col items-center justify-center text-center px-4 space-y-6">
-            <h2 className="font-domine font-medium text-[#b37556] text-[34px] leading-snug">
-              Consistent Care Creates
-              <br /> Lasting Glow
-            </h2>
+            <div className="w-full">
+              <div className="mx-auto w-[90%] rounded-xl py-6 flex items-center justify-center">
+                <p className="font-domine font-medium text-[#b37556] text-[34px] leading-snug text-center">
+                  For customised skin & hair
+                  <br /> treatment
+                </p>
+              </div>
+            </div>
             {/* Top action box with Book Now button (no border) */}
             <div className="w-full">
               <div className="mx-auto w-[90%] rounded-xl py-6 flex items-center justify-center ">
@@ -55,12 +59,12 @@ export default function SecondSection({ onBookAppointment }) {
             </div>
             {/* Bottom caption box (styled like heading, no border) */}
             <div className="w-full">
-              <div className="mx-auto w-[90%] rounded-xl py-6 flex items-center justify-center">
+              {/* <div className="mx-auto w-[90%] rounded-xl py-6 flex items-center justify-center">
                 <p className="font-domine font-medium text-[#b37556] text-[34px] leading-snug text-center">
                   For customised skin & hair
                   <br /> treatment
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
 

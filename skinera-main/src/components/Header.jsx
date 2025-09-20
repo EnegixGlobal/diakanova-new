@@ -433,12 +433,12 @@ export default function Header({ onBookAppointment }) {
             </div>
 
             {/* Wellness, Gallery, Blogs */}
-            <Link
+            {/* <Link
               to="/wellness"
               className="text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
             >
               Wellness
-            </Link>
+            </Link> */}
             <Link
               to="/gallery"
               className="text-gray-700 hover:text-[#c67c54] transition-colors font-bold"

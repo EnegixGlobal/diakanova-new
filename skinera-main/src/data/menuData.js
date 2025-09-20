@@ -49,12 +49,9 @@ export const skinMenu = [
 export const skinNested = {
   "Acne Scar": {
     children: [
-      { label: "CO2 Fractional Laser", href: "/service/co2-fractional-laser" },
-      {
-        label: "Dermaroller with PRP & Subcision",
-        href: "/service/dermaroller-with-prp-and-subcision",
-      },
-      { label: "Erbium Fiber Laser", href: "/service/erbium-fiber-laser" },
+      { label: "Micro Needling with PRP", href: "/service/micro-needling-prp" },
+      { label: "MNRF", href: "/service/mnrf" },
+      { label: "Chemical Peel", href: "/service/chemical-peel" },
     ],
   },
   "Anti Aging": {
@@ -75,17 +72,19 @@ export const hairMenu = [
         label: "Intralesional Injection",
         href: "/service/intralesional-injection",
       },
-      { label: "Hair PRP Therapy", href: "/service/hair-prp" },
+      { label: "Hair PRP/GFC Therapy", href: "/service/hair-prp" },
       { label: "Mesotherapy", href: "/service/mesotherapy" },
       {
         label: "Low Light Laser Therapy",
         href: "/service/hair-regrowth-laser",
       },
-      { label: "Hair GFC Therapy", href: "/service/hair-gfc-therapy" },
+      // { label: "Hair GFC Therapy", href: "/service/hair-gfc-therapy" },
     ],
   },
-  { label: "Alopecia Areata", href: "/service/hair-gfc" },
+  // { label: "Alopecia Areata", href: "/service/hair-gfc" },
+    { label: "Hair Regrowth", href: "/service/regrowth" },
   { label: "Dandruff", href: "/service/dandruff" },
+  { label: "Laser Hair Removal", href: "/service/laser-hair-removal" },
   // { label: "Hair Transplant", href: "/service/hair-transplant" },
 ];
 

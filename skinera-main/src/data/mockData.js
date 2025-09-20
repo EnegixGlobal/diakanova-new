@@ -1,20 +1,32 @@
 // Mock data for services (synced with ssss)
 // Import images so Vite processes them for production builds
-import antiAgingImg from "../../Images/Services/anti-aging.jpg";
-import deepPeelingImg from "../../Images/Services/deep-peeling.jpg";
-import facialsImg from "../../Images/Services/facials.jpg";
-import laserHairRemovalImg from "../../Images/Services/laser-hair-removal.jpg";
+// Legacy images replaced below by curated set where available
+import antiAgingImgLegacy from "../../Images/Services/anti-aging.jpg";
+import deepPeelingImgLegacy from "../../Images/Services/deep-peeling.jpg";
+import facialsImgLegacy from "../../Images/Services/facials.jpg";
+import laserHairRemovalImgLegacy from "../../Images/Services/laser-hair-removal.jpg";
 // Note: file name in assets is spelled 'threapy'
 import laserSkinTherapyImg from "../../Images/Services/laser-skin-threapy.jpg";
 import mesotherapyImg from "../../Images/Services/mesotherapy.jpg";
 import microdermabrasionImg from "../../Images/Services/microdermabrasion.jpg";
-import pigmentationSolutionsImg from "../../Images/Services/pigmentation-solution.jpg";
-import skinTighteningImg from "../../Images/Services/skin-tightening.jpg";
-import hairPrpImg from "../../Images/Services/hair-prp.jpg";
-import hairGfcImg from "../../Images/Services/hair-gfc.jpg";
-import hairRegrowthLaserImg from "../../Images/Services/hair-regrowth-laser.jpg";
-import koreanSkinTreatmentImg from "../../Images/Services/korean-skin-treatment.jpg";
-import botoxTreatmentImg from "../../Images/Services/botox-treatment.jpg";
+import pigmentationSolutionsImgLegacy from "../../Images/Services/pigmentation-solution.jpg";
+import skinTighteningImgLegacy from "../../Images/Services/skin-tightening.jpg";
+import hairPrpImgLegacy from "../../Images/Services/hair-prp.jpg";
+import hairGfcImgLegacy from "../../Images/Services/hair-gfc.jpg";
+import hairRegrowthLaserImgLegacy from "../../Images/Services/hair-regrowth-laser.jpg";
+import koreanSkinTreatmentImgLegacy from "../../Images/Services/korean-skin-treatment.jpg";
+import botoxTreatmentImgLegacy from "../../Images/Services/botox-treatment.jpg";
+// New curated service images
+import newAntiAging from "../../Images/Service-Images-new/Anti-aging.jpg";
+import newDeepPeelings from "../../Images/Service-Images-new/Deep Peelings.jpg";
+import newFacials from "../../Images/Service-Images-new/facials.jpg";
+import newHairPrp from "../../Images/Service-Images-new/hair prp.jpg";
+import newHairRegrowthLaser from "../../Images/Service-Images-new/hair regrowth laser.jpg";
+import newKoreanSkin from "../../Images/Service-Images-new/Korean Skin Treatment.jpg";
+import newPigmentation from "../../Images/Service-Images-new/pigmentation.jpg";
+import newPsoriasis from "../../Images/Service-Images-new/psoriasis.jpg";
+import newSkinTightening from "../../Images/Service-Images-new/skin tightening.jpg";
+import newTineaInfection from "../../Images/Service-Images-new/tinea infection.jpg";
 import manicureImg from "../../Images/Services/Manicure.jpg";
 import pedicureImg from "../../Images/Services/Pedicure.jpg";
 import fillerImg from "../../Images/Our-Service/imgi_53_hyaluronic-acid-injection-fillers-for-cheeks.jpg";
@@ -47,9 +59,9 @@ export const servicesData = {
     price: 2500,
     currency: "₹",
     priceNote: "per session",
-    image: antiAgingImg,
-    decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: antiAgingImg, // placeholder for video
+  image: newAntiAging,
+  decorativeFlower: decorativeFlowerImg,
+  videoThumbnail: newAntiAging, // updated thumbnail
     overview: {
       title: "Overview",
       description:
@@ -80,9 +92,9 @@ export const servicesData = {
     price: 2200,
     currency: "₹",
     priceNote: "per session",
-    image: deepPeelingImg,
-    decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: deepPeelingImg,
+  image: newDeepPeelings,
+  decorativeFlower: decorativeFlowerImg,
+  videoThumbnail: newDeepPeelings,
     overview: {
       title: "Overview",
       description:
@@ -388,9 +400,10 @@ export const servicesData = {
     price: 1500,
     currency: "₹",
     priceNote: "per session",
-    image: facialsImg,
-    decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: facialsImg,
+  // Updated to curated image set (legacy facialsImg removed during migration)
+  image: newFacials,
+  decorativeFlower: decorativeFlowerImg,
+  videoThumbnail: newFacials,
     overview: {
       title: "Overview",
       description:
@@ -405,9 +418,10 @@ export const servicesData = {
     price: 3500,
     currency: "₹",
     priceNote: "per session",
-    image: laserHairRemovalImg,
-    decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: laserHairRemovalImg,
+  // Migrated: legacy laserHairRemovalImg removed; using curated placeholder newSkinTightening until specific asset added
+  image: newSkinTightening,
+  decorativeFlower: decorativeFlowerImg,
+  videoThumbnail: newSkinTightening,
     overview: {
       title: "Overview",
       description:
@@ -473,9 +487,9 @@ export const servicesData = {
     price: 3800,
     currency: "₹",
     priceNote: "per session",
-    image: pigmentationSolutionsImg,
-    decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: pigmentationSolutionsImg,
+  image: newPigmentation,
+  decorativeFlower: decorativeFlowerImg,
+  videoThumbnail: newPigmentation,
     overview: {
       title: "Overview",
       description:
@@ -490,9 +504,9 @@ export const servicesData = {
     price: 4500,
     currency: "₹",
     priceNote: "per session",
-    image: skinTighteningImg,
-    decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: skinTighteningImg,
+  image: newSkinTightening,
+  decorativeFlower: decorativeFlowerImg,
+  videoThumbnail: newSkinTightening,
     overview: {
       title: "Overview",
       description:
@@ -507,9 +521,9 @@ export const servicesData = {
     price: 5000,
     currency: "₹",
     priceNote: "per session",
-    image: hairPrpImg,
-    decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: hairPrpImg,
+  image: newHairPrp,
+  decorativeFlower: decorativeFlowerImg,
+  videoThumbnail: newHairPrp,
     overview: {
       title: "Overview",
       description:
@@ -529,9 +543,9 @@ export const servicesData = {
     price: 6000,
     currency: "₹",
     priceNote: "per session",
-    image: hairGfcImg,
+  image: newHairPrp, // placeholder: using PRP image until dedicated GFC image in curated set
     decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: hairGfcImg,
+  videoThumbnail: newHairPrp,
     overview: {
       title: "Overview",
       description:
@@ -546,9 +560,9 @@ export const servicesData = {
     price: 3000,
     currency: "₹",
     priceNote: "per session",
-    image: hairRegrowthLaserImg,
-    decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: hairRegrowthLaserImg,
+  image: newHairRegrowthLaser,
+  decorativeFlower: decorativeFlowerImg,
+  videoThumbnail: newHairRegrowthLaser,
     overview: {
       title: "Overview",
       description:
@@ -563,9 +577,9 @@ export const servicesData = {
     price: 2800,
     currency: "₹",
     priceNote: "per session",
-    image: koreanSkinTreatmentImg,
-    decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: koreanSkinTreatmentImg,
+  image: newKoreanSkin,
+  decorativeFlower: decorativeFlowerImg,
+  videoThumbnail: newKoreanSkin,
     overview: {
       title: "Overview",
       description:
@@ -580,9 +594,9 @@ export const servicesData = {
     price: 12000,
     currency: "₹",
     priceNote: "per area",
-    image: botoxTreatmentImg,
+  image: botoxTreatmentImgLegacy, // migrated: undefined botoxTreatmentImg -> legacy asset retained (no curated botox image yet)
     decorativeFlower: decorativeFlowerImg,
-    videoThumbnail: botoxTreatmentImg,
+  videoThumbnail: botoxTreatmentImgLegacy,
     overview: {
       title: "Overview",
       description:
