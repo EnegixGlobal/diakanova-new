@@ -2,7 +2,7 @@
 // Service-specific images
 import imgPigmentation from "../../Images/Service-Images-new/pigmentation.jpg";
 //jhjk
-import imgSkinTightening from "../../Images/Service-Images-new/Skin-tightening.jpg";
+import imgSkinTightening from "../../Images/Service-Images-new/skin-tightening.jpg";
 import imgHairPRP from "../../Images/Service-Images-new/hair-prp.jpg";
 import imgHairGFC from "../../Images/newServicesComponent/HAIR-GFC.webp";
 import imgHairRegrowthLaser from "../../Images/Service-Images-new/Hair-regrowth-laser.jpg";
