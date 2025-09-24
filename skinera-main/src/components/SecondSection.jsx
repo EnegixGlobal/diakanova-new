@@ -50,10 +50,17 @@ export default function SecondSection({ onBookAppointment }) {
                 <button
                   type="button"
                   onClick={onBookAppointment}
+<<<<<<< HEAD
                   className="bg-[#c67c54] text-white px-6 py-3 rounded-md shadow hover:bg-[#b8734a] focus:outline-none focus:ring-2 focus:ring-[#c67c54]/50 font-bold"
                   aria-label="Book appointment now"
                 >
                   BOOK APPOINTMENT NOW
+=======
+                  className="bg-[#c67c54] text-white px-6 py-3 rounded-md shadow hover:bg-[#b8734a] focus:outline-none focus:ring-2 focus:ring-[#c67c54]/50"
+                  aria-label="Book appointment now"
+                >
+                  Book Now
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
                 </button>
               </div>
             </div>

@@ -41,7 +41,11 @@ export const skinMenu = [
       { label: "Microdermabrasion", href: "/service/microdermabrasion" },
     ],
   },
+<<<<<<< HEAD
  
+=======
+  { label: "Botox & Fillers", href: "/service/botox-treatment" },
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
   { label: "Stretch Marks", href: "/service/stretch-marks" },
   { label: "Pre Bridal Specials", href: "/service/pre-bridal-specials" },
 ];

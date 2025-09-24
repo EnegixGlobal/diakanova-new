@@ -18,7 +18,11 @@ export default function ConsultationBanner({ onBookAppointment }) {
             <button
               type="button"
               onClick={onBookAppointment}
+<<<<<<< HEAD
               className="inline-block bg-[#c98963] hover:bg-[#be7f58] text-white px-6 py-2 rounded-md font-medium transition-colors duration-300  text-xl"
+=======
+              className="inline-block bg-[#c98963] hover:bg-[#be7f58] text-white px-6 py-2 rounded-md font-medium transition-colors duration-300 text-sm"
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
             >
               GET STARTED FOR FREE
             </button>

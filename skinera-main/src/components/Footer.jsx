@@ -112,6 +112,7 @@ export default function Footer() {
         </div>
 
         {/* Center logo */}
+<<<<<<< HEAD
           <div className="mt-6 md:mt-10 flex flex-col items-center">
             <div className="bg-white rounded-lg p-1">
               <img
@@ -123,6 +124,17 @@ export default function Footer() {
           </div>
 
           {/* Nav links */}
+=======
+        <div className="mt-10 md:mt-16 flex flex-col items-center">
+          <img
+            src={footerLogo}
+            alt="DSkinova"
+            className="w-[180px] sm:w-[220px] md:w-[280px] lg:w-[320px] object-contain"
+          />
+        </div>
+
+        {/* Nav links */}
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
         <nav className="mt-8 md:mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-white/95">
           <Link to="/" className="hover:text-white text-sm md:text-base">
             Home

@@ -30,7 +30,11 @@ export default function Header({ onBookAppointment }) {
   const [hairOpen, setHairOpen] = useState(false);
   const [hairDesktopOpen, setHairDesktopOpen] = useState(false);
   const hairTimer = useRef(null);
+<<<<<<< HEAD
   // Homeopathic dropdown states
+=======
+  // Hemopathic dropdown states
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
   const [hemoOpen, setHemoOpen] = useState(false);
   const [hemoDesktopOpen, setHemoDesktopOpen] = useState(false);
   const hemoTimer = useRef(null);
@@ -376,7 +380,11 @@ export default function Header({ onBookAppointment }) {
                 })}
               </div>
             </div>
+<<<<<<< HEAD
             {/* Homeopathic dropdown */}
+=======
+            {/* Hemopathic dropdown */}
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
             <div
               className="relative"
               onMouseEnter={() => {
@@ -395,7 +403,11 @@ export default function Header({ onBookAppointment }) {
                 type="button"
                 className="inline-flex items-center gap-1 text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
               >
+<<<<<<< HEAD
                 Homeopathic
+=======
+                Hemopathic
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
                 <CaretDown
                   className={`w-3.5 h-3.5 transition-transform duration-200 ${
                     hemoDesktopOpen ? "rotate-180" : ""
@@ -455,7 +467,11 @@ export default function Header({ onBookAppointment }) {
               to="/contact"
               className="text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
             >
+<<<<<<< HEAD
               ContactUs
+=======
+              Contacts
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
             </Link>
           </nav>
 
@@ -467,7 +483,11 @@ export default function Header({ onBookAppointment }) {
               className="hidden md:inline-block bg-[#c67c54] text-white px-6 lg:px-8 py-2.5 lg:py-3 text-base border border-transparent hover:bg-[#b8734a] transition-colors font-bold"
               aria-label="Book appointment now"
             >
+<<<<<<< HEAD
               BOOK APPOINTMENT
+=======
+              Book Appointment Now
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
             </button>
             <button
               type="button"
@@ -719,14 +739,22 @@ export default function Header({ onBookAppointment }) {
               })}
             </div>
 
+<<<<<<< HEAD
             {/* Homeopathic accordion */}
+=======
+            {/* Hemopathic accordion */}
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
             <button
               type="button"
               className="w-full flex items-center justify-between py-3 text-base text-gray-800 border-b border-black/10 font-bold"
               onClick={() => setHemoOpen((v) => !v)}
               aria-expanded={hemoOpen}
             >
+<<<<<<< HEAD
               <span>Homeopathic</span>
+=======
+              <span>Hemopathic</span>
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
               <CaretDown
                 className={`w-4 h-4 transition-transform duration-200 ease-in-out ${
                   hemoOpen ? "rotate-180" : ""

@@ -39,11 +39,19 @@ const slides = [
     noCaption: true,
     noGradient: true,
   },
+<<<<<<< HEAD
   // 5) Homeopathy Dermatology slide
   {
     type: "image",
     src: hemoDermImg,
     alt: "Homeopathy Dermatology",
+=======
+  // 5) Hemopathy Dermatology slide
+  {
+    type: "image",
+    src: hemoDermImg,
+    alt: "Hemopathy Dermatology",
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
   },
   // 5) Image with caption (replaced previous video)
   {
@@ -66,7 +74,11 @@ const captions = [
   null, // Duplicate doctor slide also no caption
   null, // Static image with no caption
   {
+<<<<<<< HEAD
     h: "Homeopathy Dermatology",
+=======
+    h: "Hemopathy Dermatology",
+>>>>>>> 9a8b7b073784a146b5c541fc8dc34ae74be53edf
     p: "Holistic care that aligns wellness with advanced skin treatments for lasting results.",
   },
   {
